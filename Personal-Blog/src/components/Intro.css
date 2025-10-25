@@ -1,0 +1,547 @@
+body {
+    top: auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0d0d1e;
+    /* Dark background matching the image */
+    color: #e0e0e0;
+    /* Light text color */
+    margin: 0;
+    /* Ensure no default margin */
+}
+
+/* --- Intro Container --- */
+.intro-container {
+    padding: 40px 80px;
+    /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    /* Space between text section and services/code section */
+}
+
+.intro-text-section {
+    max-width: 800px;
+    /* Limit width of text for readability */
+}
+
+.name-heading {
+    font-size: 3.5em;
+    /* Large name */
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.changing-post {
+    font-size: 2em;
+    font-weight: 500;
+    color: #007bff;
+    /* Highlight color for the role */
+    min-height: 1.5em;
+    /* Prevent layout shift during typing */
+    margin-bottom: 20px;
+}
+
+.typing-text {
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    background-color: #007bff;
+    width: 3px;
+    height: 1.2em;
+    animation: blink 0.7s infinite;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.tagline {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #b0b0b0;
+}
+
+/* --- Services and Code Section --- */
+.services-and-code-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Two-thirds for services, one-third for code */
+    gap: 40px;
+    align-items: flex-start;
+    /* Align items to the top */
+}
+
+/* --- Service Boxes Grid --- */
+.service-boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Responsive 2-column grid */
+    gap: 25px;
+}
+
+.service-box {
+    background-color: #1a1a36;
+    /* Darker background for boxes */
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align content to the left */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle border */
+}
+
+.service-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon-bg {
+    background-color: #2b2b52;
+    /* Even darker background for icon circle */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.service-icon {
+    font-size: 60px;
+    color: #007bff;
+    /* justify-content: centers; Remove this, it's not a valid CSS property */
+}
+
+.service-box h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.service-box p {
+    font-size: 1em;
+    color: #a0a0a0;
+    line-height: 1.5;
+}
+
+/* --- Animated Code Snippet --- */
+.animated-code-snippet {
+    background-color: rgba(30, 30, 60, 0.6);
+    /* Semi-transparent dark background */
+    border-radius: 20px;
+    padding: 130px;
+    position: relative;
+    overflow: hidden;
+    /* Important for containing blur blobs and ensuring icons stay within bounds */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    /* Apply blur directly to the background */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 400px;
+    /* Ensure it has some height */
+    display: flex;
+    align-items: center;
+    /* Vertically center content */
+    justify-content: center;
+    /* Horizontally center content */
+}
+
+.animated-code-snippet pre {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* Ensure text is above blobs */
+    z-index: 2;
+    /* Keep code above blurred elements */
+}
+
+.animated-code-snippet code {
+    font-family: 'Fira Code', 'Cascadia Code', monospace;
+    /* Monospaced font */
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #e0e0e0;
+    /* Light code text */
+    white-space: pre-wrap;
+    /* Wrap long lines */
+}
+
+/* Highlight keywords in code (basic example) */
+.animated-code-snippet code .keyword {
+    color: #8be9fd;
+    /* Cyan-like */
+}
+
+.animated-code-snippet code .string {
+    color: #f1fa8c;
+    /* Yellow */
+}
+
+.animated-code-snippet code .function-name {
+    color: #50fa7b;
+    /* Green */
+}
+
+.animated-code-snippet code .constant {
+    color: #ff79c6;
+    /* Pink */
+}
+
+/* --- Rotating Icons Container --- */
+.rotating-icons-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    /* Adjust to control the radius of rotation */
+    height: 100%;
+    /* Adjust to control the radius of rotation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    /* Allows clicks to pass through to elements beneath */
+    animation: container-rotate 30s linear infinite;
+    /* Rotate the entire container */
+}
+
+@keyframes container-rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.rotating-icon {
+    position: absolute;
+    font-size: 3em;
+    /* Size of the rotating icons */
+    color: #007bff;
+    /* Color of the rotating icons */
+    opacity: 0.8;
+    /* Calculate position using CSS variables for index and total icons */
+    --angle: calc(360deg / var(--total) * var(--i));
+    /* --- CHANGE MADE HERE: Increased the translate value for a larger orbit --- */
+    transform: rotate(var(--angle)) translate(220px) rotate(calc(-1 * var(--angle)));
+    filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.7));
+    /* Subtle glow */
+    transition: transform 0.1s linear;
+    /* Smooth icon positioning */
+    z-index: 3;
+    /* Above code and blobs */
+}
+
+
+/* Blurred background blobs */
+.blur-blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    filter: blur(80px);
+    /* Heavy blur */
+    -webkit-filter: blur(80px);
+    z-index: 1;
+    /* Behind the code */
+}
+
+.blur-blob.one {
+    background: radial-gradient(circle, #8338ec, #6a0dad);
+    /* Purple gradient */
+    width: 150px;
+    height: 150px;
+    top: -20px;
+    left: -20px;
+    animation: blob-anim-one 10s infinite alternate ease-in-out;
+}
+
+.blur-blob.two {
+    background: radial-gradient(circle, #ff006e, #dc0060);
+    /* Pink gradient */
+    width: 200px;
+    height: 200px;
+    bottom: -30px;
+    right: -30px;
+    animation: blob-anim-two 12s infinite alternate-reverse ease-in-out;
+}
+
+.blur-blob.three {
+    background: radial-gradient(circle, #00bbf9, #007bff);
+    /* Blue gradient */
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    animation: blob-anim-three 8s infinite alternate ease-in-out;
+}
+
+@keyframes blob-anim-one {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(20px, 30px) scale(1.1);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes blob-anim-two {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    55% {
+        transform: translate(-25px, -15px) scale(1.05);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes blob-anim-three {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    40% {
+        transform: translate(-40%, -60%) scale(0.9);
+    }
+
+    80% {
+        transform: translate(-60%, -45%) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+    .intro-container {
+        padding: 30px 40px;
+    }
+
+    .name-heading {
+        font-size: 2.8em;
+    }
+
+    .changing-post {
+        font-size: 1.6em;
+    }
+
+    .services-and-code-section {
+        grid-template-columns: 1fr;
+        /* Stack on smaller screens */
+    }
+
+    .rotating-icon {
+        /* --- CHANGE MADE HERE: Increased the translate value for a larger orbit on tablet/desktop --- */
+        transform: rotate(var(--angle)) translate(150px) rotate(calc(-1 * var(--angle)));
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-container {
+        padding: 20px;
+    }
+
+    .name-heading {
+        font-size: 2.2em;
+    }
+
+    .changing-post {
+        font-size: 1.3em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .service-boxes-grid {
+        grid-template-columns: 1fr;
+        /* Single column on very small screens */
+    }
+
+    .service-box {
+        padding: 20px;
+    }
+
+    .service-icon-bg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .service-icon {
+        font-size: 60px;
+        justify-content: center;
+    }
+
+    .animated-code-snippet {
+        padding: 20px;
+        min-height: 250px;
+    }
+
+    .animated-code-snippet code {
+        font-size: 0.9em;
+    }
+
+    .rotating-icon {
+        /* --- CHANGE MADE HERE: Increased the translate value for a larger orbit on mobile --- */
+        transform: rotate(var(--angle)) translate(120px) rotate(calc(-1 * var(--angle)));
+        font-size: 2em;
+    }
+}
+
+.cta-Buttons {
+    margin-top: 35px;
+}
+
+.Buttons {
+    display: flex;
+    flex-wrap:  wrap;
+    gap: 20px;
+}
+
+.Buttons button {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3 ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-icon {
+    margin-right: 10px;
+    font-size: 1.6em;
+}
+
+.my-Works {
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,123,255,0.4);
+}
+
+.my-Works:hover {
+    background-color: #0056b3;
+    transform: translateX(-2px);
+}
+
+.hire-me {
+    background-color: #50fa7b;
+    color: #0d0d1e;
+    box-shadow: 0 4px 15px rgba(80, 250, 123, 0.4);
+}
+
+.hire-me:hover{
+    background-color: #3aa256;
+    transform: translateX(-2px);
+}
+
+.download-CV {
+    background-color:#6a0dad;
+    color: white;
+    box-shadow: 0 4px 15px rgba(122, 52, 183, 0.5);
+}
+
+.download-CV:hover {
+    background-color: #5c1fb0;
+    transform: translateX(-2px);
+}
+
+.social-icons {
+    display: flex;
+    gap: 50px;
+    font-size: 5rem;
+    justify-content: center;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+
+.LinkedIn{
+    color: #0A66C2;
+}
+
+.LinkedIn:hover {
+    color: #4780b8;
+}
+
+.Github {
+    color: wheat;
+}
+
+.Github:hover {
+    color: #c7c7c7;
+}
+
+.youtube {
+    color: red;
+}
+
+.youtube:hover {
+    color: rgb(240, 58, 58);
+}
+
+.facebook {
+    color: #1877F2;
+}
+
+.facebook:hover {
+    color: #4d92ed;
+}
+
+.instagram {
+    color: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+}
+
+.instagram:hover {
+     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Email Icon with the widely recognized 'Gmail' Red */
+.Email {
+    color: #f6f5f5; 
+}
+

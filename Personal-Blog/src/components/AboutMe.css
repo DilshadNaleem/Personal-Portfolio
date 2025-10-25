@@ -1,0 +1,229 @@
+/* --- Education Section Styling to Match Screenshot --- */
+.info-sections-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 950px;
+    margin: 20px auto;
+}
+/* The main container for the Education section */
+.education {
+    color: #e0e0e0;
+    padding: 20px 40px; /* Adjust padding as needed */
+    background-color: #1c1c1c;
+    transform: translateX(-2px);
+    
+    min-width: 350px; 
+    flex: 1;
+    margin: 10px;
+    justify-content: center;
+}
+
+.education:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Education heading style */
+.education h1 {
+    font-size: 2.8rem;
+    color: #337ab7; /* A deep blue/cyan color for the heading (similar to 'Education' text) */
+    margin-bottom: 25px;
+}
+
+/* List container for the timeline effect */
+.education ul {
+    list-style: none; 
+    padding-left: 20px; 
+    position: relative; 
+}
+
+/* The main vertical timeline line */
+.education ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 8px; /* Position the line */
+    width: 2px;
+    height: 100%;
+    /* Use a color similar to the vertical line in the screenshot (a subtle dark/grey-blue) */
+    background-color: #337ab7; 
+}
+
+/* Style for each individual education entry (the title) */
+.education ul li {
+    position: relative;
+    padding-left: 25px; /* Space for the circular marker */
+    margin-bottom: 30px; /* Space between education entries */
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff; /* Course Title in white */
+}
+
+/* The circular marker for each list item */
+.education ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px; /* Align marker vertically with the text */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%; /* Make it a circle */
+    /* Gradient or solid color for the marker (matching the deep blue) */
+    background: linear-gradient(135deg, #007bff, #337ab7);
+    border: 3px solid #1c1c1c; /* Border color should match the background to make it stand out */
+    z-index: 1; /* Ensure it's above the vertical line */
+}
+
+/* Styles for the sub-info (campus, date, about) */
+.education ul .campus,
+.education ul .date,
+.education ul .about {
+    display: block; 
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #b0b0b0; /* Subdued grey color for details */
+    margin-top: 5px;
+    padding-left: 0;
+}
+
+.education ul .date {
+    font-style: italic;
+    color: #999;
+    font-size: 20px; 
+    justify-content: space-between;
+    top: 0px;
+    bottom: 10px; 
+}
+
+.education ul li:hover {
+   transform: translateX(-5px);
+}
+
+/* --- Languages Section Styling (Container/Headers Unchanged) --- */
+
+.languages {
+    color: #e0e0e0;
+    padding: 20px 40px;
+    background-color: #1c1c1c;
+    transform: translateX(-2px);
+    min-width: 450px;
+    flex: 1;
+    margin: 10px;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.languages:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.languages h1 {
+    font-size: 2.8rem;
+    color: #337ab7;
+    margin-bottom: 25px;
+}
+
+.languages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    transition: all 0.3s ease-out; 
+}
+
+.language-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffffff;
+    min-width: 80px;
+}
+
+.language-bar {
+    flex: 1;
+    height: 8px;
+    background-color: #333;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* 💡 KEY FIX: Default State (Not Hovering) 💡
+   The bar is always 100% wide and blue/gradient by default. 
+   We reset the animation to ensure it doesn't run initially. */
+.language-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #007bff, #337ab7);
+    border-radius: 4px;
+    width: 100%; 
+    animation: none; 
+    
+}
+
+/* --- Keyframe Animation Definition --- */
+
+/* Defines the animation sequence from 0% to 100% */
+@keyframes loadProgress {
+    0% {
+        width: 0%;
+    }
+    100% {
+        /* Ends at 100% to fill the bar */
+        width: 100%;
+    }
+}
+
+/* --- Hover Loading Effect --- */
+
+.language-item:hover .language-progress {
+    /* 1. Force Rerun: Set the animation property to re-trigger the load animation. 
+       The 'forwards' property ensures the bar stays at 100% after loading. */
+    animation: loadProgress 1s ease-in-out forwards;
+}
+
+.language-item:hover .language-progress {
+    width: 0%; /* Instant reset to 0% start point */
+    transition: width 0s; /* No transition time for the reset */
+    
+    /* Re-apply the animation to start the smooth load */
+    animation: loadProgress 1s ease-in-out forwards; 
+}
+
+.language-item .language-progress {
+    width: 100%;
+    transition: width 0.3s; /* Add a slight transition back to 100% when leaving hover */
+    animation: none;
+}
+
+.language-level {
+    font-size: 1.4rem;
+    color: #b0b0b0;
+    min-width: 100px;
+    text-align: right;
+}
+
+.my-Self p {
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    font-size: 30px;
+    word-spacing: 1px;  
+    line-height: 1.6;
+    max-width: 1200px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 0 20px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3rem;
+    color: #337ab7;
+    margin-bottom: 20px;
+}

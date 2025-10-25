@@ -1,0 +1,142 @@
+/* MyProject.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+}
+
+.card:hover {
+    animation: containerShake 0.5s ease-in-out;
+    box-shadow: 
+        0 0 20px rgba(0, 77, 255, 0.3),
+        0 0 40px rgba(0, 51, 204, 0.2),
+        0 0 60px rgba(0, 26, 153, 0.1);
+    transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+    border: 1px solid rgba(0, 77, 255, 0.1);
+}
+
+@keyframes containerShake {
+    0%, 100% { transform: perspective(1000px) rotateX(0) rotateY(0) translateX(0); }
+    25% { transform: perspective(1000px) rotateX(0.5deg) rotateY(-0.5deg) translateX(-2px); }
+    50% { transform: perspective(1000px) rotateX(-0.5deg) rotateY(0.5deg) translateX(2px); }
+    75% { transform: perspective(1000px) rotateX(0.3deg) rotateY(-0.3deg) translateX(-1px); }
+}
+
+
+
+p {
+    font-size: 1.6rem;
+    margin: 20px 0 40px 0;
+    color: #ffffff;
+    text-align: center;
+    max-width: 600px;
+}
+
+.card {
+    background: rgb(0, 0, 0);
+    border-radius: 12px;
+    padding: 30px;
+    margin: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fbfbfb;
+    margin-bottom: 8px;
+}
+
+.card-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #033dff;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.card-info {
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.language-tag {
+    background: #040005;
+    color: #4209ff;
+    padding: 6px 12px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid #c8e6c9;
+}
+
+.github {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #96b59a;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+     position: relative;
+    overflow: hidden;
+}
+
+.github:hover .github-arrow {
+    animation: arrowMove 0.5s ease forwards;
+    color: blue;
+}
+
+.github:hover {
+    color: #0056b3;
+}
+
+@keyframes arrowMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(8px);
+    }
+}
+
+.github-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Divider between cards */
+.card + .card {
+    border-top: 2px solid #f0f0f0;
+    margin-top: 30px;
+    padding-top: 40px;
+}

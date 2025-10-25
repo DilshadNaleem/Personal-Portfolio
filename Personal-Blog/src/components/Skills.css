@@ -1,0 +1,114 @@
+/* Skills.css */
+
+.programming-languages {
+    font-size: 3.5rem;
+    margin: 20px;
+    font-weight: bold;
+    padding: 0 20px;
+    position: relative; /* Essential for positioning the ::after pseudo-element */
+    cursor: pointer;
+    margin-bottom: 40px;
+    text-decoration: none; 
+    display: inline-block; /* Helps in containing the width for the underline */
+}
+
+/* Create the pseudo-element for the underline */
+.programming-languages::after {
+    content: ''; 
+    position: absolute;
+    bottom: 0; 
+    left: 20px; 
+    right: 20px; 
+    height: 3px; 
+    background-color: #007bff; 
+    width: 0%; 
+    transition: width 1.0s ease-out; 
+}
+
+/* On hover, expand the width of the pseudo-element */
+.programming-languages:hover::after,
+.programming-languages.is-visible::after {
+    width: calc(100% - 40px);
+
+}
+
+.icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.icon-outline:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.8), /* Brighter, blue glow */
+                0 0 15px rgba(0, 123, 255, 0.6); /* Inner, softer glow */
+    background-color: #007bff;
+}
+
+.icon-outline {
+position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 250px;
+  margin: 20px;
+  height: 230px; /* Total container height */
+  background-color: #1a36b1; /* Same blue background */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    transition: 
+        transform 0.3s ease, 
+        box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 230px;
+  background-color: #0f132c; /* Black background box */
+  border-radius: 10px;
+  margin-bottom: 0px;
+  transition: background-color 0.3s ease;
+}
+
+.icons:hover{
+    background-color: #007bff;
+    transform: scale3d(1.05, 1.05, 1);
+}
+
+.icons svg {
+  font-size: 5.5rem; /* Bigger icon size */
+  color: #ffffff; /* White icon color */
+}
+
+.icons i {
+  font-size: 5.5rem; /* Bigger icon size */
+  color: #ffffff; /* White icon color */
+}
+
+.icon-name {
+  color: #fefefe;
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-top: 30px;
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+
+
+.icon-outline:hover .icon-name {
+    text-decoration: underline; 
+    text-decoration-color: #0512ff; 
+    color: white; 
+    transform: 0.3s easeout;
+}
