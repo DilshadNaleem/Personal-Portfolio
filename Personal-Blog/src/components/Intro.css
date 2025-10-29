@@ -412,12 +412,12 @@ body {
     .name-heading {
         font-size: 2.2em;
         text-align: center;
-        margin-top: 40px;
         background: linear-gradient(135deg, #fff 0%, #007bff 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         margin-bottom: 15px;
+        padding-top: 40px;
     }
 
     .changing-post {
