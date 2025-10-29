@@ -74,6 +74,8 @@ position: relative;
   height: 230px;
   background-color: #0f132c; /* Black background box */
   border-radius: 10px;
+  border: 1px solid #fefefe;
+  border-color: #fefefe;
   margin-bottom: 0px;
   transition: background-color 0.3s ease;
 }
