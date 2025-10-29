@@ -223,7 +223,7 @@
 }
 
 /* 768px Mobile Design - Tablet Portrait */
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .navbar {
     height: 70px;
   }

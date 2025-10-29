@@ -1,6 +1,6 @@
 /* --- Education Section Styling to Match Screenshot --- */
 .info-sections-container {
-    display: flex;
+    
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -221,25 +221,29 @@
     justify-content: center;
     align-items: center;
   }
+
+     html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: none;
+    }
   
   /* Stack sections vertically on mobile */
   .info-sections-container {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    gap: 15px;
+    gap: 30px;
     margin: 10px;
-    justify-content: center;
+    align-items: center;
   }
   
   /* Adjust education section for mobile */
   .education {
     min-width: unset;
     width: 92%;
-    padding: 15px 20px;
     margin: 0;
     transform: none;
-    display: flex;
+    display: block;
   }
   
   .education h1 {

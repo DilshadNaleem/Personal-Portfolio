@@ -114,8 +114,8 @@ function MyProjects() {
           Console Billing System using C++
         </div>
         <div className="card-info" data-aos="fade-right" data-aos-delay="500">
-          Console Application using C++ application to add new Items, Calculate
-          total based on Items
+          Developed Console Application using C++ application to add new Items, Calculate
+          total based on Items.         
         </div>
         <div className="card-languages" data-aos="fade-up" data-aos-delay="600">
           <span className="language-tag">C++</span>
