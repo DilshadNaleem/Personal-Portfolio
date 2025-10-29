@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import '../Navbar.css';
 
-function Navbar({ 
+function WebsiteNavbar({ 
   scrollToHome, 
   scrollToAbout, 
   scrollToSkills, 
@@ -118,4 +118,4 @@ function Navbar({
   );
 }
 
-export default Navbar;
+export default WebsiteNavbar;

@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import './Intro.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import {
     FaReact, FaMobileAlt, FaRobot, FaCode, FaCloud, FaCodeBranch, FaDesktop, FaBug,
-    FaJs, FaPython, FaJava, FaDatabase, FaNodeJs, FaAws, FaDocker, FaGitAlt, // Added new icons
+    FaJs, FaPython, FaJava, FaDatabase, FaNodeJs, FaAws, FaDocker, FaGitAlt,
     FaHandshake,
     FaDownload,
     FaLinkedin,
     FaGithub,
     FaYoutube,
     FaFacebook,
-    FaInbox,
     FaEnvelope,
     FaInstagram
-} from 'react-icons/fa'; // Import additional icons
+} from 'react-icons/fa';
 
-function Intro() {
+function Intro({ scrollToProjects , scrollToContact}) {
+    // Initialize AOS
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    }, []);
+
     const roles = [
         "AI/ML Engineer",
         "Full Stack Development",
@@ -60,22 +71,25 @@ function Intro() {
         <FaAws key="aws" />,
         <FaDocker key="docker" />,
         <FaGitAlt key="git" />,
-        <FaCode key="code" />, // Re-using FaCode
-        <FaCloud key="cloud" />, // Re-using FaCloud
-        <FaMobileAlt key="mobile" /> // Re-using FaMobileAlt
+        <FaCode key="code" />,
+        <FaCloud key="cloud" />,
+        <FaMobileAlt key="mobile" />
     ];
 
     return (
-        <div className="intro-container"> {/* A container for the entire intro section */}
-            <div className="intro-text-section"> <br />
-                <h1 className="name-heading">Mohammed Naleem Mohammed Dilshad</h1>
-                <div className="changing-post">
+        <div className="intro-container">
+            <div className="intro-text-section" data-aos="fade-up" data-aos-delay="100">
+                <br />
+                <h1 className="name-heading" data-aos="fade-up" data-aos-delay="200">
+                    Mohammed Naleem Mohammed Dilshad
+                </h1>
+                <div className="changing-post" data-aos="fade-up" data-aos-delay="300">
                     <span className="typing-text">
                         {currentRole}
                         <span className="cursor">|</span>
                     </span>
                 </div>
-                <h4 className="tagline">
+                <h4 className="tagline" data-aos="fade-up" data-aos-delay="400">
                     Specializing in web app development, mobile app development, and cutting-edge AI solutions. Transform your ideas into powerful digital experiences within short period of time.
                 </h4>
             </div>
@@ -83,16 +97,16 @@ function Intro() {
             <div className="services-and-code-section">
                 <div className="service-boxes-grid">
                     {/* Service Box 1: React & Next.js Development */}
-                    <div className="service-box">
+                    <div className="service-box" data-aos="fade-up" data-aos-delay="100">
                         <div className="service-icon-bg">
                             <FaReact className="service-icon" />
                         </div>
-                        <h3>React & Next.js Development</h3>
+                        <h3>React.js Development</h3>
                         <p>Modern web applications with optimal performance</p>
                     </div>
 
                     {/* Service Box 2: React Native Apps */}
-                    <div className="service-box">
+                    <div className="service-box" data-aos="fade-up" data-aos-delay="150">
                         <div className="service-icon-bg">
                             <FaMobileAlt className="service-icon" />
                         </div>
@@ -101,7 +115,7 @@ function Intro() {
                     </div>
 
                     {/* Service Box 3: AI Integration */}
-                    <div className="service-box">
+                    <div className="service-box" data-aos="fade-up" data-aos-delay="200">
                         <div className="service-icon-bg">
                             <FaRobot className="service-icon" />
                         </div>
@@ -110,7 +124,7 @@ function Intro() {
                     </div>
 
                     {/* Service Box 4: Custom Software */}
-                    <div className="service-box">
+                    <div className="service-box" data-aos="fade-up" data-aos-delay="250">
                         <div className="service-icon-bg">
                             <FaCode className="service-icon" />
                         </div>
@@ -118,7 +132,7 @@ function Intro() {
                         <p>Tailored solutions for your business needs</p>
                     </div>
 
-                    <div className="service-box">
+                    <div className="service-box" data-aos="fade-up" data-aos-delay="300">
                         <div className="service-icon-bg">
                             <FaCloud className="service-icon" />
                         </div>
@@ -126,7 +140,7 @@ function Intro() {
                         <p>Scalable, reliable, and secure cloud infrastructure</p>
                     </div>
 
-                    <div className="service-box">
+                    <div className="service-box" data-aos="fade-up" data-aos-delay="350">
                         <div className="service-icon-bg">
                             <FaCodeBranch className="service-icon" />
                         </div>
@@ -134,7 +148,7 @@ function Intro() {
                         <p>Implementing and deploying scalabale microservices and REST architecture to power complex applications and handle high traffic loads.</p>
                     </div>
 
-                    <div className="service-box">
+                    <div className="service-box" data-aos="fade-up" data-aos-delay="400">
                         <div className="service-icon-bg">
                             <FaDesktop className="service-icon" />
                         </div>
@@ -142,7 +156,7 @@ function Intro() {
                         <p>Developing high performance, reliable desktop applicaiton using modern frameworks for a fast, native user experience</p>
                     </div>
 
-                    <div className="service-box">
+                    <div className="service-box" data-aos="fade-up" data-aos-delay="450">
                         <div className="service-icon-bg">
                             <FaBug className="service-icon" />
                         </div>
@@ -152,7 +166,7 @@ function Intro() {
                 </div>
 
                 {/* This is the code snippet section with the blurred background effect */}
-                <div className="animated-code-snippet">
+                <div className="animated-code-snippet" data-aos="fade-left" data-aos-delay="500">
                     <pre>
                         <code>
                             {`const solution = 'innovative';
@@ -181,63 +195,59 @@ AI.integrate(solution);`}
                 </div>
             </div>
 
-            <div className="cta-Buttons">
+            <div className="cta-Buttons" data-aos="fade-up" data-aos-delay="600">
                 <div className="Buttons">
-                    {/* You need to import FaCodeBranch, FaHandshake, and FaDownload in Intro.jsx */}
-                    <button className="my-Works">
+                    <button className="my-Works" data-aos="zoom-in" data-aos-delay="700" onClick={scrollToProjects}>
                         <FaCodeBranch className="button-icon" /> Explore My Works
                     </button>
 
-                    <button className="hire-me">
+                    <button className="hire-me" data-aos="zoom-in" data-aos-delay="750" onClick={ scrollToContact}>
                         <FaHandshake className="button-icon" /> Hire Me
                     </button>
 
-                    <button className="download-CV">
+                    <button className="download-CV" data-aos="zoom-in" data-aos-delay="800">
                         <FaDownload className="button-icon" /> Download CV
                     </button>
                 </div>
             </div>
 
-            <div className="social-icons">
-                    <a href="https://www.linkedin.com/in/dilshad-naleem-26a40a310/" className='social-icon LinkedIn' 
-                    target='_blanks' rel='noppener noreferrer'>
-                    <FaLinkedin className='social-icon'></FaLinkedin>
-                    </a>
+            <div className="social-icons" data-aos="fade-up" data-aos-delay="900">
+                <a href="https://www.linkedin.com/in/dilshad-naleem-26a40a310/" className='social-icon LinkedIn' 
+                target='_blank' rel='noopener noreferrer'>
+                    <FaLinkedin className='social-icon' />
+                </a>
 
-                    <a href="https://github.com/DilshadNaleem" className='social-icon Github'
-                    target='_blank' 
-                    rel='noppener noreferrer'>
-                        <FaGithub className='social-icon'/>
-                    </a>
+                <a href="https://github.com/DilshadNaleem" className='social-icon Github'
+                target='_blank' 
+                rel='noopener noreferrer'>
+                    <FaGithub className='social-icon'/>
+                </a>
 
-                    <a href="https://www.youtube.com/@Unknown-so8sm" className='social-icon youtube'
-                    target='_blank'
-                    rel='noppener norefferer'>
-                        <FaYoutube className='social-icon'/>
-                    </a>
+                <a href="https://www.youtube.com/@Unknown-so8sm" className='social-icon youtube'
+                target='_blank'
+                rel='noopener noreferrer'>
+                    <FaYoutube className='social-icon'/>
+                </a>
 
-                    <a href="https://www.facebook.com/share/1CmKR4mMTA/" className='social-icon facebook'
-                    target='_blank'
-                    rel='noppener norefferer'>
-                        <FaFacebook className='social-icon'/>
-                    </a>
+                <a href="https://www.facebook.com/share/1CmKR4mMTA/" className='social-icon facebook'
+                target='_blank'
+                rel='noopener noreferrer'>
+                    <FaFacebook className='social-icon'/>
+                </a>
 
-                    <a href="https://www.instagram.com/dilshad_naleem_dilshad/?hl=en" className='social-icon instagram'
-                    target='_blank'
-                    rel='noppener norefferer'>
-                        <FaInstagram className='social-icon'/>
-                    </a>
+                <a href="https://www.instagram.com/dilshad_naleem_dilshad/?hl=en" className='social-icon instagram'
+                target='_blank'
+                rel='noopener noreferrer'>
+                    <FaInstagram className='social-icon'/>
+                </a>
 
-                    <a href="mailto:dilshadnaleem13@gmail.com" className='social-icon Email'
-                    target='_blank'
-                    rel='noppener norefferer'>
-                        <FaEnvelope className='social-icon'/>
-                    </a>
+                <a href="mailto:dilshadnaleem13@gmail.com" className='social-icon Email'
+                target='_blank'
+                rel='noopener noreferrer'>
+                    <FaEnvelope className='social-icon'/>
+                </a>
             </div>
-
         </div>
-
-
     );
 }
 

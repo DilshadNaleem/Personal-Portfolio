@@ -230,7 +230,7 @@
 }
 
 /* Mobile Styles */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .brand-name {
         display: none;
     }
@@ -260,7 +260,7 @@
 
     .nav-links {
         position: fixed;
-        top: 80px;
+        top: 60px;
         right: 0;
         /* FIX: Align mobile menu to the right when open */
         width: 100%;
@@ -268,7 +268,7 @@
         backdrop-filter: blur(15px);
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
+        padding: 0px 0;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         transform: translateY(-100%);
         opacity: 0;

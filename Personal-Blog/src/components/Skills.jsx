@@ -168,8 +168,8 @@ function Skills() {
 
         <div className="icon-outline">
           <div className="icons">
-            <i class="skill-icon devicon-dot-net-plain colored" aria-hidden="true"></i>
-            <span className='icon-name'>APS.NET</span>
+            <i className="skill-icon devicon-dot-net-plain colored" aria-hidden="true"></i>
+            <span className='icon-name'>ASP.NET</span>
           </div>
         </div>
 

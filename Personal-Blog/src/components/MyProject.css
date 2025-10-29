@@ -140,3 +140,175 @@ p {
     margin-top: 30px;
     padding-top: 40px;
 }
+
+/* View More Button */
+.view-more {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  padding: 0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.view-more:hover {
+  color: #0056b3;
+}
+
+.view-more .github-arrow {
+  transition: transform 0.3s ease;
+}
+
+.view-more:hover .github-arrow {
+  transform: translateX(3px);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Carousel Styles */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+.carousel-image-container {
+  position: relative;
+  max-width: 800px;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  display: block;
+}
+
+.carousel-button {
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin: 0 15px;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.image-counter {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.modal-project-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.modal-project-info h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.modal-project-info p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 15px;
+    max-width: 95vw;
+  }
+  
+  .carousel-button {
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .carousel-image-container {
+    max-height: 400px;
+  }
+  
+  .carousel-image {
+    max-height: 400px;
+  }
+}
+
