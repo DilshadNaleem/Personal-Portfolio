@@ -29,8 +29,6 @@
     75% { transform: perspective(1000px) rotateX(0.3deg) rotateY(-0.3deg) translateX(-1px); }
 }
 
-
-
 p {
     font-size: 1.6rem;
     margin: 20px 0 40px 0;
@@ -46,13 +44,10 @@ p {
     margin: auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border: 1px solid #e0e0e0;
-   
     max-width: 800px;
     text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-
 
 .card-title {
     font-size: 1.8rem;
@@ -102,7 +97,7 @@ p {
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.2s ease;
-     position: relative;
+    position: relative;
     overflow: hidden;
 }
 
@@ -172,6 +167,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
+  min-height: 200px;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
@@ -188,6 +184,8 @@ p {
   max-height: 90vh;
   position: relative;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
 }
 
 .close-button {
@@ -213,28 +211,33 @@ p {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Carousel Styles */
+/* Carousel Styles - UPDATED FOR CONSISTENT IMAGE SIZE */
 .carousel {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   margin: 20px 0;
+  flex: 1;
+  min-height: 0; /* Important for flex item sizing */
 }
 
 .carousel-image-container {
   position: relative;
-  max-width: 800px;
-  max-height: 600px;
+  width: 800px; /* Fixed width */
+  height: 490px; /* Fixed height */
   overflow: hidden;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #19638b; /* Background color for consistency */
 }
 
 .carousel-image {
   width: 100%;
-  height: auto;
-  max-height: 600px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: contain; /* This maintains aspect ratio while fitting within container */
   display: block;
 }
 
@@ -253,6 +256,7 @@ p {
   justify-content: center;
   transition: background-color 0.3s ease;
   margin: 0 15px;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
 .carousel-button:hover {
@@ -273,11 +277,14 @@ p {
 .modal-project-info {
   text-align: center;
   margin-top: 20px;
+  display: block;
+  justify-content: center;
 }
 
 .modal-project-info h3 {
   margin-bottom: 10px;
-  color: #333;
+  color: #0c0c0c;
+  font-size: 20px;
 }
 
 .modal-project-info p {
@@ -286,11 +293,20 @@ p {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .carousel-image-container {
+    width: 90vw;
+    height: 50vh; /* Use viewport height for responsive sizing */
+    max-width: 600px;
+    max-height: 400px;
+  }
+}
 
+@media (max-width: 768px) {
   .container {
     padding: 10px;
   }
+  
   .modal-content {
     padding: 15px;
     max-width: 95vw;
@@ -304,10 +320,24 @@ p {
   }
   
   .carousel-image-container {
-    max-height: 400px;
+    width: 95vw;
+    height: 40vh;
+    max-width: 500px;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-image-container {
+    width: 95vw;
+    height: 35vh;
+    max-height: 250px;
   }
   
-  .carousel-image {
-    max-height: 400px;
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    margin: 0 3px;
   }
 }

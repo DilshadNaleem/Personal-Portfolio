@@ -163,12 +163,12 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .contacts {
-    max-width: 90%;
+    max-width: 80%;
     padding: 0 1rem;
   }
   
   .contact-item {
-    padding: 0.8rem 1rem;
+    
     align-items: center;
     display: flex;
   }
@@ -179,9 +179,10 @@
     width: 40px;
     height: 40px;
     font-size: 1rem;
+    min-width: 40px;
   }
   
   .details {
-    font-size: 10px;
+    font-size: 0.8rem;
   }
 }
