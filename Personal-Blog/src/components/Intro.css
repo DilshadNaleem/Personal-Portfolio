@@ -383,12 +383,19 @@ body {
     .intro-container {
         padding: 20px 15px;
         gap: 30px;
+        overflow: hidden;
+    }
+
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: none;
     }
 
     .name-heading {
         font-size: 2.2em;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 40px;
         background: linear-gradient(135deg, #fff 0%, #007bff 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -519,6 +526,7 @@ body {
         flex-direction: column;
         gap: 15px;
         padding: 0 20px;
+        font-size: 10px;
     }
 
     .Buttons button {
@@ -559,7 +567,7 @@ body {
     .social-icons {
         flex-wrap: wrap;
         gap: 25px;
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         padding: 20px;
         margin-top: 20px;
     }
@@ -567,6 +575,7 @@ body {
     .social-icon {
         transition: all 0.3s ease;
         filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+        font-size: 2rem;
     }
 
     .social-icon:hover {
@@ -699,6 +708,7 @@ body {
 
     .service-box {
         padding: 20px 15px;
+        justify-content: center;
     }
 
     .Buttons {

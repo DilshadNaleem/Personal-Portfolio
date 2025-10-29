@@ -7,13 +7,13 @@
     max-width: 950px;
     margin: 20px auto;
 }
+
 /* The main container for the Education section */
 .education {
     color: #e0e0e0;
-    padding: 20px 40px; /* Adjust padding as needed */
+    padding: 20px 40px;
     background-color: #1c1c1c;
     transform: translateX(-2px);
-    
     min-width: 350px; 
     flex: 1;
     margin: 10px;
@@ -28,7 +28,7 @@
 /* Education heading style */
 .education h1 {
     font-size: 2.8rem;
-    color: #337ab7; /* A deep blue/cyan color for the heading (similar to 'Education' text) */
+    color: #337ab7;
     margin-bottom: 25px;
 }
 
@@ -44,21 +44,20 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 8px; /* Position the line */
+    left: 8px;
     width: 2px;
     height: 100%;
-    /* Use a color similar to the vertical line in the screenshot (a subtle dark/grey-blue) */
     background-color: #337ab7; 
 }
 
-/* Style for each individual education entry (the title) */
+/* Style for each individual education entry */
 .education ul li {
     position: relative;
-    padding-left: 25px; /* Space for the circular marker */
-    margin-bottom: 30px; /* Space between education entries */
+    padding-left: 25px;
+    margin-bottom: 30px;
     font-size: 25px;
     font-weight: bold;
-    color: #ffffff; /* Course Title in white */
+    color: #ffffff;
 }
 
 /* The circular marker for each list item */
@@ -66,24 +65,23 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 4px; /* Align marker vertically with the text */
+    top: 4px;
     width: 16px;
     height: 16px;
-    border-radius: 50%; /* Make it a circle */
-    /* Gradient or solid color for the marker (matching the deep blue) */
+    border-radius: 50%;
     background: linear-gradient(135deg, #007bff, #337ab7);
-    border: 3px solid #1c1c1c; /* Border color should match the background to make it stand out */
-    z-index: 1; /* Ensure it's above the vertical line */
+    border: 3px solid #1c1c1c;
+    z-index: 1;
 }
 
-/* Styles for the sub-info (campus, date, about) */
+/* Styles for the sub-info */
 .education ul .campus,
 .education ul .date,
 .education ul .about {
     display: block; 
     font-size: 1.5rem;
     font-weight: normal;
-    color: #b0b0b0; /* Subdued grey color for details */
+    color: #b0b0b0;
     margin-top: 5px;
     padding-left: 0;
 }
@@ -92,16 +90,13 @@
     font-style: italic;
     color: #999;
     font-size: 20px; 
-    justify-content: space-between;
-    top: 0px;
-    bottom: 10px; 
 }
 
 .education ul li:hover {
    transform: translateX(-5px);
 }
 
-/* --- Languages Section Styling (Container/Headers Unchanged) --- */
+/* --- Languages Section Styling --- */
 
 .languages {
     color: #e0e0e0;
@@ -155,52 +150,27 @@
     overflow: hidden;
 }
 
-/* 💡 KEY FIX: Default State (Not Hovering) 💡
-   The bar is always 100% wide and blue/gradient by default. 
-   We reset the animation to ensure it doesn't run initially. */
+/* Default state for progress bars */
 .language-progress {
     height: 100%;
     background: linear-gradient(90deg, #007bff, #337ab7);
     border-radius: 4px;
     width: 100%; 
-    animation: none; 
-    
+    transform: translateZ(0);
+    animation: loadProgress 1.5s ease-in-out forwards;
 }
 
 /* --- Keyframe Animation Definition --- */
-
-/* Defines the animation sequence from 0% to 100% */
 @keyframes loadProgress {
     0% {
         width: 0%;
     }
     100% {
-        /* Ends at 100% to fill the bar */
         width: 100%;
     }
 }
 
-/* --- Hover Loading Effect --- */
 
-.language-item:hover .language-progress {
-    /* 1. Force Rerun: Set the animation property to re-trigger the load animation. 
-       The 'forwards' property ensures the bar stays at 100% after loading. */
-    animation: loadProgress 1s ease-in-out forwards;
-}
-
-.language-item:hover .language-progress {
-    width: 0%; /* Instant reset to 0% start point */
-    transition: width 0s; /* No transition time for the reset */
-    
-    /* Re-apply the animation to start the smooth load */
-    animation: loadProgress 1s ease-in-out forwards; 
-}
-
-.language-item .language-progress {
-    width: 100%;
-    transition: width 0.3s; /* Add a slight transition back to 100% when leaving hover */
-    animation: none;
-}
 
 .language-level {
     font-size: 1.4rem;
@@ -226,4 +196,177 @@
     font-size: 3rem;
     color: #337ab7;
     margin-bottom: 20px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Reduce top spacing for mobile */
+  .AboutMe-container {
+    padding-top: 20px;
+  }
+  
+  /* Adjust heading size and spacing */
+  .heading h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Adjust paragraph styling for mobile */
+  .my-Self p {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 0px;
+    word-spacing: normal;
+    justify-content: center;
+  }
+  
+  /* Stack sections vertically on mobile */
+  .info-sections-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px;
+    margin-right: 0px auto;
+    justify-content: center;
+  }
+  
+  /* Adjust education section for mobile */
+  .education {
+    min-width: unset;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 0;
+    transform: none;
+  }
+  
+  .education h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .education ul li {
+    font-size: 18px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .education ul .campus,
+  .education ul .date {
+    font-size: 14px;
+  }
+  
+  /* Adjust languages section for mobile */
+  .languages {
+    min-width: unset;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 0;
+    transform: none;
+  }
+  
+  .languages h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Stack language items vertically on very small screens */
+  .language-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+  
+  .language-name {
+    font-size: 16px;
+    min-width: unset;
+  }
+  
+  .language-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #333;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .language-level {
+    font-size: 14px;
+    min-width: unset;
+    text-align: left;
+  }
+  
+ 
+
+
+  /* Reduce hover effects for touch devices */
+  .education:hover,
+  .languages:hover {
+    transform: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .education ul li:hover {
+    transform: none;
+  }
+} /* ← This was missing in your original code */
+
+/* Extra small devices (phones under 480px) */
+@media (max-width: 480px) {
+  .heading h1 {
+    font-size: 1.8rem;
+  }
+  
+  .my-Self p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  
+  .info-sections-container {
+    padding: 0 0px;
+    gap: 10px;
+    margin: 10px;
+  }
+  
+  .education,
+  .languages {
+    padding: 12px 15px;
+    margin: 10px;
+  }
+  
+  .education h1,
+  .languages h1 {
+    font-size: 1.6rem;
+  }
+  
+  .education ul li {
+    font-size: 16px;
+    padding-left: 18px;
+  }
+  
+  .education ul::before {
+    left: 6px;
+  }
+  
+  .education ul li::before {
+    width: 12px;
+    height: 12px;
+    top: 3px;
+  }
+}
+
+/* Very small devices (phones under 360px) */
+@media (max-width: 360px) {
+  .my-Self p {
+    font-size: 13px;
+  }
+  
+  .education ul li {
+    font-size: 14px;
+  }
+  
+  .education ul .campus,
+  .education ul .date {
+    font-size: 12px;
+  }
 }

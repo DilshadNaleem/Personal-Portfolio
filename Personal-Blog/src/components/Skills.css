@@ -107,8 +107,191 @@ position: relative;
 
 
 .icon-outline:hover .icon-name {
-    text-decoration: underline; 
-    text-decoration-color: #0512ff; 
+ 
     color: white; 
     transform: 0.3s easeout;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .programming-languages {
+    font-size: 2rem;
+    margin: 15px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .programming-languages::after {
+    left: 15px;
+    right: 15px;
+    height: 2px;
+  }
+
+  .programming-languages:hover::after,
+  .programming-languages.is-visible::after {
+    width: calc(100% - 30px);
+  }
+
+  .icons-container {
+    gap: 15px;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  .icon-outline {
+    width: 150px;
+    height: 140px;
+    margin: 10px;
+  }
+
+  .icons {
+    width: 150px;
+    height: 140px;
+    padding: 10px;
+  }
+
+  .icons svg {
+    font-size: 3rem;
+  }
+
+  .icons i {
+    font-size: 3rem;
+  }
+
+  .icon-name {
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+
+  .icon-outline:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+  .programming-languages {
+    font-size: 1.8rem;
+    margin: 10px;
+    padding: 0 10px;
+    margin-bottom: 25px;
+  }
+
+  .programming-languages::after {
+    left: 10px;
+    right: 10px;
+  }
+
+  .programming-languages:hover::after,
+  .programming-languages.is-visible::after {
+    width: calc(100% - 20px);
+  }
+
+  .icons-container {
+    gap: 10px;
+    padding: 0 5px;
+  }
+
+  .icon-outline {
+    width: 130px;
+    height: 120px;
+    margin: 8px;
+  }
+
+  .icons {
+    width: 130px;
+    height: 120px;
+  }
+
+  .icons svg {
+    font-size: 2.5rem;
+  }
+
+  .icons i {
+    font-size: 2.5rem;
+  }
+
+  .icon-name {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
+/* Extra Small Mobile Styles */
+@media screen and (max-width: 360px) {
+  .icons-container {
+    gap: 8px;
+  }
+
+  .icon-outline {
+    width: 110px;
+    height: 100px;
+    margin: 5px;
+  }
+
+  .icons {
+    width: 110px;
+    height: 100px;
+  }
+
+  .icons svg {
+    font-size: 2rem;
+  }
+
+  .icons i {
+    font-size: 2rem;
+  }
+
+  .icon-name {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .icon-outline:hover {
+    transform: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .icons:hover {
+    background-color: #0f132c;
+    transform: none;
+  }
+  
+  .icon-outline:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Portrait orientation specific adjustments */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .icons-container {
+    gap: 12px;
+  }
+}
+
+/* Landscape orientation specific adjustments */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .icon-outline {
+    width: 140px;
+    height: 130px;
+  }
+  
+  .icons {
+    width: 140px;
+    height: 130px;
+  }
+  
+  .icons svg,
+  .icons i {
+    font-size: 2.8rem;
+  }
+  
+  .icon-name {
+    font-size: 15px;
+  }
 }

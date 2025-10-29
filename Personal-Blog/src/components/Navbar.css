@@ -231,108 +231,165 @@
 
 /* Mobile Styles */
 @media (max-width: 1000px) {
-    .brand-name {
-        display: none;
-    }
-    
-    .brand-subtitle {
-        display: none;
-    }
-    
-    /* Show MDN initials */
-    .nav-brand::before {
-        content: "MDN";
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: #ffffff;
-        text-shadow: 0 0 10px rgba(100, 150, 255, 0.7);
-        letter-spacing: 1px;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1001;
-    }
-    .mobile-menu-btn {
-        display: flex;
-        padding: auto;
-        right: 25px;
-    }
+  .brand-name {
+    display: none;
+  }
+  
+  .brand-subtitle {
+    display: none;
+  }
+  
+  /* Show MDN initials */
+  .nav-brand::before {
+    content: "MDN";
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(100, 150, 255, 0.7);
+    letter-spacing: 1px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+  }
 
-    .nav-links {
-        position: fixed;
-        top: 60px;
-        right: 0;
-        /* FIX: Align mobile menu to the right when open */
-        width: 100%;
-        background: rgba(15, 15, 35, 0.95);
-        backdrop-filter: blur(15px);
-        flex-direction: column;
-        align-items: center;
-        padding: 0px 0;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s ease;
-        border-top: 1px solid rgba(53, 82, 154, 0.3);
-    }
+  .mobile-menu-btn {
+    display: flex;
+    padding: auto;
+    right: 25px;
+  }
 
-    .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: rgba(15, 15, 35, 0.98);
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    border-top: 1px solid rgba(53, 82, 154, 0.3);
+    gap: 20px;
+  }
 
-    .nav-links li {
-        margin: 15px 0;
-    }
+  .nav-links.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
 
-    .nav-links li a {
-        padding: 15px 30px;
-        display: block;
-        text-align: center;
-        width: 200px;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-        border: 1px solid transparent;
-    }
+  .nav-links li {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-    .nav-links li a:hover {
-        background: rgba(53, 82, 154, 0.2);
-        color: #ffffff;
-        border: 1px solid rgba(100, 150, 255, 0.3);
-        box-shadow: 0 0 10px rgba(53, 82, 154, 0.4);
-    }
-    .Buttons {
-        flex-direction: column;
-    }
+  .nav-links li button,
+  .nav-links li a {
+    padding: 15px 30px;
+    display: block;
+    text-align: center;
+    width: 200px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    font-size: 1.1rem;
+  }
 
-    .Buttons button {
-        width: 100%;
-        font-size: 1rem;
-    }
+  .nav-links li button:hover,
+  .nav-links li a:hover {
+    background: rgba(53, 82, 154, 0.2);
+    color: #ffffff;
+    border: 1px solid rgba(100, 150, 255, 0.3);
+    box-shadow: 0 0 10px rgba(53, 82, 154, 0.4);
+  }
+
+  /* Mobile button styles */
+  .nav-links button {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #c0c0ff;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+  }
+
+  .nav-links button.active {
+    color: #ffffff;
+    background: rgba(53, 82, 154, 0.2);
+    border: 1px solid rgba(100, 150, 255, 0.3);
+  }
+
+  .nav-external-link {
+    text-decoration: none;
+    color: #c0c0ff;
+    font-weight: 500;
+  }
+
+  .nav-external-link:hover {
+    color: #ffffff;
+  }
 }
 
-@media (max-width: 1600px) {
-    .brand-name {
-        display: none;
-    }
-    
-    .brand-subtitle {
-        display: none;
-    }
-    
-    /* Show MDN initials */
-    .nav-brand::before {
-        content: "MDN";
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: #ffffff;
-        text-shadow: 0 0 10px rgba(100, 150, 255, 0.7);
-        letter-spacing: 1px;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1001;
-    }
+/* Tablet Styles */
+@media (max-width: 1600px) and (min-width: 1001px) {
+  .brand-name {
+    display: none;
+  }
+  
+  .brand-subtitle {
+    display: none;
+  }
+  
+  /* Show MDN initials */
+  .nav-brand::before {
+    content: "MDN";
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(100, 150, 255, 0.7);
+    letter-spacing: 1px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .nav-brand::before {
+    font-size: 1.5rem;
+    top: 25px;
+    left: 15px;
+  }
+
+  .nav-links {
+    top: 70px;
+    height: calc(100vh - 70px);
+    padding: 20px 0;
+  }
+
+  .nav-links li button,
+  .nav-links li a {
+    width: 180px;
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  .mobile-menu-btn {
+    right: 15px;
+    width: 25px;
+    height: 20px;
+  }
 }

@@ -162,7 +162,7 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .contacts {
-    max-width: 100%;
+    max-width: 80%;
     padding: 0 1rem;
   }
   
