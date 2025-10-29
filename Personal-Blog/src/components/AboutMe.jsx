@@ -4,7 +4,7 @@ function AboutMe()
 {
     return (
       <>
-      <br /> <br /><br />
+      
         <div className="heading">
           <h1>About Me</h1>
         </div>
