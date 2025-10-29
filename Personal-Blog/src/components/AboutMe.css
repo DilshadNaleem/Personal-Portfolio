@@ -213,30 +213,33 @@
   
   /* Adjust paragraph styling for mobile */
   .my-Self p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
     padding: 0 0px;
     word-spacing: normal;
+    display: flex;
     justify-content: center;
+    align-items: center;
   }
   
   /* Stack sections vertically on mobile */
   .info-sections-container {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 15px;
-    padding: 10px;
-    margin-right: 0px auto;
+    margin: 10px;
     justify-content: center;
   }
   
   /* Adjust education section for mobile */
   .education {
     min-width: unset;
-    width: 100%;
+    width: 92%;
     padding: 15px 20px;
     margin: 0;
     transform: none;
+    display: flex;
   }
   
   .education h1 {
@@ -258,7 +261,7 @@
   /* Adjust languages section for mobile */
   .languages {
     min-width: unset;
-    width: 100%;
+    width: 92%;
     padding: 15px 20px;
     margin: 0;
     transform: none;
@@ -296,7 +299,6 @@
     text-align: left;
   }
   
- 
 
 
   /* Reduce hover effects for touch devices */
@@ -328,7 +330,7 @@
     margin: 10px;
   }
   
-  .education,
+  .education
   .languages {
     padding: 12px 15px;
     margin: 10px;
