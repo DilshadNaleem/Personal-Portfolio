@@ -290,6 +290,8 @@ p {
 .modal-project-info p {
   color: #666;
   font-size: 0.9rem;
+  display: block;
+  margin: auto;
 }
 
 /* Responsive Design */

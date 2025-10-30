@@ -40,7 +40,7 @@ function FrontEnd_Development() {
       {/* First Cyber Content */}
       <div className="cyber-container cyber-container-first">
         <div className="cyber-heading" data-aos="fade-up" data-aos-duration="1200">
-          <h1>Front End Web Development With Robust and Modern Technologies</h1>
+          <h1>Custom Web Development With Robust and Modern Technologies</h1>
         </div>
 
         <div className="cyber-paragraph" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
@@ -109,10 +109,10 @@ function FrontEnd_Development() {
         <div className="programming-languages is-visible" data-aos="fade-down" data-aos-duration="800">
           Cutting Edge Technology Stack
         </div>
-        <div className="services-and-code-section">
+        <div className="services-and-code-section-2">
           <div className="service-boxes-grid">
             {/* Service Box 1: React & Next.js Development */}
-            <div className="service-box" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
+            <div className="service-box-4" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
               <div className="service-icon-bg">
                 <FaReact className="service-icon" />
               </div>
@@ -120,32 +120,39 @@ function FrontEnd_Development() {
               <p>Modern web applications with optimal performance</p>
             </div>
 
-            {/* Service Box 2: React Native Apps */}
-            <div className="service-box" data-aos="flip-left" data-aos-delay="200" data-aos-duration="800">
+              <div className="service-box-4" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
               <div className="service-icon-bg">
-                <FaMobile className="service-icon" />
+                <FaReact className="service-icon" />
               </div>
-              <h3>React Native Apps</h3>
-              <p>Cross-platform mobile solutions</p>
+              <h3>React.js Development</h3>
+              <p>Modern web applications with optimal performance</p>
             </div>
 
-            {/* Service Box 3: AI Integration */}
-            <div className="service-box" data-aos="flip-left" data-aos-delay="300" data-aos-duration="800">
+              <div className="service-box-4" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
               <div className="service-icon-bg">
-                <FaRobot className="service-icon" />
+                <FaReact className="service-icon" />
               </div>
-              <h3>AI Integration</h3>
-              <p>Smart automation and machine learning</p>
+              <h3>React.js Development</h3>
+              <p>Modern web applications with optimal performance</p>
             </div>
 
-            {/* Service Box 4: Custom Software */}
-            <div className="service-box" data-aos="flip-left" data-aos-delay="400" data-aos-duration="800">
+              <div className="service-box-4" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
               <div className="service-icon-bg">
-                <FaCode className="service-icon" />
+                <FaReact className="service-icon" />
               </div>
-              <h3>Custom Software</h3>
-              <p>Tailored solutions for your business needs</p>
+              <h3>React.js Development</h3>
+              <p>Modern web applications with optimal performance</p>
             </div>
+
+              <div className="service-box-4" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
+              <div className="service-icon-bg">
+                <FaReact className="service-icon" />
+              </div>
+              <h3>React.js Development</h3>
+              <p>Modern web applications with optimal performance</p>
+            </div>
+
+           
           </div>
         </div>
       </div>

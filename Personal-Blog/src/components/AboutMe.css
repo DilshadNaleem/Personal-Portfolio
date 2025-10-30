@@ -199,6 +199,7 @@
     margin-top: 80px;
 }
 
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   /* Reduce top spacing for mobile */
@@ -223,11 +224,6 @@
     align-items: center;
   }
 
-     html, body {
-        overflow-x: hidden;
-        width: 100%;
-        position: none;
-    }
   
   /* Stack sections vertically on mobile */
   .info-sections-container {

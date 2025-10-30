@@ -2,6 +2,7 @@ import { FaCheck, FaCode, FaMobile, FaReact, FaRobot } from "react-icons/fa";
 import "./WebsiteIntro.css";
 import React, { useEffect } from 'react';
 import AOS from 'aos';
+import WebsiteNavBar from './WebsiteNavBar';
 import 'aos/dist/aos.css';
 
 function WebsiteIntro() {
@@ -17,6 +18,7 @@ function WebsiteIntro() {
 
   return (
     <>
+     |<WebsiteNavBar/>
       {/* First Cyber Section */}
       <div className="cyber-background cyber-background-first">
         <div className="tech-background">
@@ -49,7 +51,7 @@ function WebsiteIntro() {
         </div>
 
         <div className="cyber-contact" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
-          <button className="cyber-button">Request Quote</button>
+          <a href="mailto:dilshadnaleem13@gmail.com?subject=Web Development Quote&body=Hi, I'm interested in your services.%0A%0AProject Details:%0A- Type: %0A- Timeline: %0A- Budget:" className="cyber-button">Request Quote</a>
         </div>
       </div>
 
@@ -58,7 +60,7 @@ function WebsiteIntro() {
           Why Choosing us?
         </div>
 
-        <div className="intro-container-2">
+       
           <div className="services-and-code-section-2">
             <div className="services-boxes-grid-2">
               {/* Service Box 1: React & Next.js Development */}
@@ -103,16 +105,16 @@ function WebsiteIntro() {
             </div>
           </div>
         </div>
-      </div>
+      
 
       <div className="intro-contain">
         <div className="programming-languages is-visible" data-aos="fade-down" data-aos-duration="800">
           Cutting Edge Technology Stack
         </div>
-        <div className="services-and-code-section">
+        <div className="services-and-code-section-2">
           <div className="service-boxes-grid">
             {/* Service Box 1: React & Next.js Development */}
-            <div className="service-box" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
+            <div className="service-box-4" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
               <div className="service-icon-bg">
                 <FaReact className="service-icon" />
               </div>
@@ -120,32 +122,39 @@ function WebsiteIntro() {
               <p>Modern web applications with optimal performance</p>
             </div>
 
-            {/* Service Box 2: React Native Apps */}
-            <div className="service-box" data-aos="flip-left" data-aos-delay="200" data-aos-duration="800">
+              <div className="service-box-4" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
               <div className="service-icon-bg">
-                <FaMobile className="service-icon" />
+                <FaReact className="service-icon" />
               </div>
-              <h3>React Native Apps</h3>
-              <p>Cross-platform mobile solutions</p>
+              <h3>React.js Development</h3>
+              <p>Modern web applications with optimal performance</p>
             </div>
 
-            {/* Service Box 3: AI Integration */}
-            <div className="service-box" data-aos="flip-left" data-aos-delay="300" data-aos-duration="800">
+              <div className="service-box-4" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
               <div className="service-icon-bg">
-                <FaRobot className="service-icon" />
+                <FaReact className="service-icon" />
               </div>
-              <h3>AI Integration</h3>
-              <p>Smart automation and machine learning</p>
+              <h3>React.js Development</h3>
+              <p>Modern web applications with optimal performance</p>
             </div>
 
-            {/* Service Box 4: Custom Software */}
-            <div className="service-box" data-aos="flip-left" data-aos-delay="400" data-aos-duration="800">
+              <div className="service-box-4" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
               <div className="service-icon-bg">
-                <FaCode className="service-icon" />
+                <FaReact className="service-icon" />
               </div>
-              <h3>Custom Software</h3>
-              <p>Tailored solutions for your business needs</p>
+              <h3>React.js Development</h3>
+              <p>Modern web applications with optimal performance</p>
             </div>
+
+              <div className="service-box-4" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
+              <div className="service-icon-bg">
+                <FaReact className="service-icon" />
+              </div>
+              <h3>React.js Development</h3>
+              <p>Modern web applications with optimal performance</p>
+            </div>
+
+           
           </div>
         </div>
       </div>
@@ -177,7 +186,7 @@ function WebsiteIntro() {
             <span className="language-tag">Medical AI</span>
           </div>
           <a href="#" className="github">
-            View on GitHub <span className="github-arrow">➡️</span>
+            View on GitHub <span className="github-arrow">➡</span>
           </a>
         </div>
       </div>
@@ -252,7 +261,9 @@ function WebsiteIntro() {
             Let's build something amazing together. Get in touch for a free consultation.
           </div>
           <div className="cyber-contact" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
-            <button className="cyber-button">Request Quote</button>
+           <a href="mailto:dilshadnaleem13@gmail.com?subject=Web Development Quote&body=Hi, I'm interested in your services.%0A%0AProject Details:%0A- Type: %0A- Timeline: %0A- Budget:" className="cyber-button">
+    Request Quote
+  </a>
           </div>
         </div>
       </div>
@@ -260,4 +271,4 @@ function WebsiteIntro() {
   );
 }
 
-export default WebsiteIntro;
+export default WebsiteIntro;

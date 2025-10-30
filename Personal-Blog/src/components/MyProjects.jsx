@@ -1,24 +1,91 @@
 import "./MyProject.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function MyProjects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const scrollPositionRef = useRef(0);
 
   // Sample project images data - replace with your actual images
   const projectImages = {
-    "Amber Bakery System": ["/images/C++/Home.png", "/images/C++/Intro.png"],
+    "Amber Bakery System": [
+      "/images/C++/Home.png", 
+      "/images/C++/Intro.png",
+      "/images/C++/Admin.png",
+      "/images/C++/Notepad.png",
+      "/images/C++/New_Item.png",
+      "/images/C++/test.png"
+    ],
+
     "Colombo Institute of Studies": [
-      "/images/cis-1.jpg",
-      "/images/cis-2.jpg",
-      "/images/cis-3.jpg",
-      "/images/cis-4.jpg",
+      "/images/CIS/use_case.png",
+      "/images/CIS/new department.png",
+      "/images/CIS/user_management.png",
+      "/images/CIS/login.png",
+      "/images/CIS/manage.png",
+      "/images/CIS/search.png",
+      "/images/CIS/db.png"
     ],
-    MovieExplorer: [
-      "/images/movie-1.jpg",
-      "/images/movie-2.jpg",
-      "/images/movie-3.jpg",
+   
+    "Puppalate Dog Food" : [
+      "/images/dfood/usecase.png",
+      "/images/dfood/se.png",
+      "/images/dfood/reg.png",
+      "/images/dfood/nav.png",
+      "/images/dfood/edu.png",
+      "/images/dfood/vid.png",
+      "/images/dfood/ft.png",
+      "/images/dfood/cart.png"
     ],
+
+    "Gallery Cafe" : [
+      "/images/web/conn.png",
+      "/images/web/cusine.png",
+      "/images/web/home.png",
+      "/images/web/log.png",
+      "/images/web/php.png",
+      "/images/web/res.png",
+      "/images/web/sitemap.png",
+      "/images/web/ta.png",
+      "/images/web/test.png",
+      "/images/web/wire.png"
+    ],
+
+    "TechFix" : [
+      "/images/tech/func.png",
+      "/images/tech/face.png",
+      "/images/tech/code.png",
+      "/images/tech/or.png",
+      "/images/tech/id.png",
+      "/images/tech/order.png",
+      "/images/tech/item.png",
+      "/images/tech/iname.png"
+    ], 
+
+    "Hyper-Zone" : [
+      "/images/hyp/test.png",
+      "/images/hyp/code.png",
+      "/images/hyp/ad.png",
+      "/images/hyp/add.png",
+      "/images/hyp/cart.png",
+      "/images/hyp/case.png",
+      "/images/hyp/chat.png",
+      "/images/hyp/conf.png",
+      "/images/hyp/dash.png",
+      "/images/hyp/dis.png",
+      "/images/hyp/google.png",
+      "/images/hyp/manual.png",
+      "/images/hyp/new.png",
+      "/images/hyp/otp.png",
+      "/images/hyp/pdf.png",
+      "/images/hyp/pl.png",
+      "/images/hyp/qr.png",
+      "/images/hyp/schema.png",
+      "/images/hyp/seq.png",
+      "/images/hyp/slider.png",
+      "/images/hyp/sub.png",
+      "/images/hyp/wire.png",
+    ]
   };
 
   useEffect(() => {
@@ -39,6 +106,7 @@ function MyProjects() {
   }, []);
 
   const handleViewMore = (projectName) => {
+    scrollPositionRef.current = window.scrollY;
     setSelectedProject(projectName);
     setCurrentImageIndex(0);
   };
@@ -46,6 +114,10 @@ function MyProjects() {
   const handleCloseModal = () => {
     setSelectedProject(null);
     setCurrentImageIndex(0);
+   
+    setTimeout(() => {
+      window.scrollTo(0, scrollPositionRef.current);
+    })
   };
 
   const nextImage = () => {
@@ -215,7 +287,7 @@ function MyProjects() {
           View on GitHub <span className="github-arrow">➡️</span>
         </a>
         <button
-          onClick={() => handleViewMore("MovieExplorer")}
+          onClick={() => handleViewMore("Puppalate Dog Food")}
           className="view-more"
           data-aos="fade-up"
           data-aos-delay="850"
@@ -304,7 +376,7 @@ function MyProjects() {
           View on GitHub <span className="github-arrow">➡️</span>
         </a>
         <button
-          onClick={() => handleViewMore("MovieExplorer")}
+          onClick={() => handleViewMore("Gallery Cafe")}
           className="view-more"
           data-aos="fade-up"
           data-aos-delay="850"
@@ -372,7 +444,7 @@ function MyProjects() {
           View on GitHub <span className="github-arrow">➡️</span>
         </a>
         <button
-          onClick={() => handleViewMore("MovieExplorer")}
+          onClick={() => handleViewMore("TechFix")}
           className="view-more"
           data-aos="fade-up"
           data-aos-delay="850"
@@ -479,6 +551,7 @@ function MyProjects() {
           <span className="language-tag">HTML</span>
           <span className="language-tag">CSS</span>
           <span className="language-tag">JavaScript</span>
+          <span className="language-tag">Agile</span>
           <span className="language-tag">MySQL</span>
           <span className="language-tag">Role-Based Access</span>
           <span className="language-tag">2F verificaiton</span>
@@ -496,7 +569,7 @@ function MyProjects() {
           View on GitHub <span className="github-arrow">➡️</span>
         </a>
         <button
-          onClick={() => handleViewMore("HyperZone")}
+          onClick={() => handleViewMore("Hyper-Zone")}
           className="view-more"
           data-aos="fade-up"
           data-aos-delay="850"
@@ -505,95 +578,7 @@ function MyProjects() {
         </button>
       </div>
 
-        <div className="card" data-aos="fade-up" data-aos-delay="300">
-        <div className="card-title" data-aos="fade-right" data-aos-delay="400">
-          Gallery Cafe
-        </div>
-        <div
-          className="card-heading"
-          data-aos="fade-right"
-          data-aos-delay="500"
-        >
-          Fullstack Website Applicaiton using PHP
-        </div>
-        <div className="card-info" data-aos="fade-right" data-aos-delay="600">
-          <div className="project-description">
-            Fullstack web application built with{" "}
-            <strong>PHP, HTML, CSS, JavaScript </strong>
-            featuring multi-role authentication and comprehensive management
-            systems.
-          </div>
-
-          <div className="roles-container">
-            <div className="role-section">
-              <h4 className="role-title">👥 Unregistered Customer</h4>
-              <ul className="role-features">
-                <li>Browse site content and view details</li>
-                <li>Access public information</li>
-              </ul>
-            </div>
-
-            <div className="role-section">
-              <h4 className="role-title">🔐 Registered Customer</h4>
-              <ul className="role-features">
-                <li>User authentication & dashboard</li>
-                <li>Multi-cuisine ordering system</li>
-                <li>Table reservations & pre-orders</li>
-                <li>Review & promotion management</li>
-                <li>Advanced search & filters</li>
-              </ul>
-            </div>
-
-            <div className="role-section">
-              <h4 className="role-title">👨‍💼 Staff</h4>
-              <ul className="role-features">
-                <li>Menu management system</li>
-                <li>Reservation handling & updates</li>
-                <li>Pre-order management</li>
-                <li>Customer parking oversight</li>
-                <li>Search & filter capabilities</li>
-              </ul>
-            </div>
-
-            <div className="role-section">
-              <h4 className="role-title">⚙️ Admin</h4>
-              <ul className="role-features">
-                <li>Complete system administration</li>
-                <li>Item & inventory management</li>
-                <li>Staff & customer management</li>
-                <li>Reservation & parking control</li>
-                <li>Advanced analytics & reporting</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="card-languages" data-aos="fade-up" data-aos-delay="700">
-          <span className="language-tag">Web Applicaiton</span>
-          <span className="language-tag">PHP</span>
-          <span className="language-tag">HTML</span>
-          <span className="language-tag">CSS</span>
-          <span className="language-tag">Javascript</span>
-          <span className="language-tag">MySQL</span>
-          <span className="language-tag">E-commerce</span>
-          <span className="language-tag">Role Based Access</span>
-        </div>
-        <a
-          href="https://github.com/DilshadNaleem/Gallery-Cafe-Restaurant"
-          className="github"
-          data-aos="fade-up"
-          data-aos-delay="800"
-        >
-          View on GitHub <span className="github-arrow">➡️</span>
-        </a>
-        <button
-          onClick={() => handleViewMore("MovieExplorer")}
-          className="view-more"
-          data-aos="fade-up"
-          data-aos-delay="850"
-        >
-          View More<span className="github-arrow">➡️</span>
-        </button>
-      </div>
+        
 
       <div className="card" data-aos="fade-up" data-aos-delay="300">
         <div className="card-title" data-aos="fade-right" data-aos-delay="400">
