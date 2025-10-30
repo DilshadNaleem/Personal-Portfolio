@@ -85,6 +85,95 @@ function MyProjects() {
       "/images/hyp/slider.png",
       "/images/hyp/sub.png",
       "/images/hyp/wire.png",
+    ], 
+
+    "Hepatopath" : [
+      "/images/hepo/use.png",
+      "/images/hepo/reset.png",
+      "/images/hepo/cir.png",
+      "/images/hepo/cirr.png",
+      "/images/hepo/cnn.png",
+      "/images/hepo/dp.png",
+      "/images/hepo/dp.png",
+      "/images/hepo/graph.png",
+      "/images/hepo/hepo.png",
+      "/images/hepo/info.png",
+      "/images/hepo/login.png",
+      "/images/hepo/model.png",
+      "/images/hepo/pat.png",
+      "/images/hepo/pre.png",
+    ], 
+
+    "Alcura" : [
+      "/images/alcura/sosdash.png",
+      "/images/alcura/ssos.png",
+      "/images/alcura/numberep.png",
+      "/images/alcura/flogin.png",
+      "/images/alcura/enface.png",
+      "/images/alcura/mlprogress.png",
+      "/images/alcura/navi.png",
+      "/images/alcura/newdi.png",
+      "/images/alcura/viewd.png",
+      "/images/alcura/vima.png",
+      "/images/alcura/newdima.png",
+      "/images/alcura/newh.png",
+      "/images/alcura/pestal.png",
+      "/images/alcura/app.png",
+      "/images/alcura/appma.png",
+      "/images/alcura/auto.png",
+      "/images/alcura/book.png",
+      "/images/alcura/com.png",
+      "/images/alcura/cont.png",
+      "/images/alcura/cus.png",
+      "/images/alcura/dash.png",
+      "/images/alcura/davaila.png",
+      "/images/alcura/desdi.png",
+      "/images/alcura/dich.png",
+      "/images/alcura/dinfo.png",
+      "/images/alcura/diui.png",
+      "/images/alcura/dpre.png",
+      "/images/alcura/dravai.png",
+      "/images/alcura/dres.png",
+      "/images/alcura/dsimage.png",
+      "/images/alcura/dvali.png",
+      "/images/alcura/edisease.png",
+      "/images/alcura/j.png",
+      "/images/alcura/junit.png",
+      "/images/alcura/plan.png",
+      "/images/alcura/po.png",
+      "/images/alcura/post.png",
+      "/images/alcura/profit.png",
+      "/images/alcura/swot.png",
+      "/images/alcura/tat.png",
+      "/images/alcura/tct.png",
+      "/images/alcura/tdt.png",
+      "/images/alcura/view.png",
+    ], 
+
+    "Mega City Cab" : [
+      "/images/mega/cj.png",
+      "/images/mega/val.png",
+      "/images/mega/junit.png",
+      "/images/mega/conf.png",
+      "/images/mega/confir.png",
+      "/images/mega/uni.png",
+      "/images/mega/dp.png",
+      "/images/mega/his.png",
+      "/images/mega/otp.png",
+      "/images/mega/re.png",
+    ],
+
+    "Cineplex" : [
+      "/images/cin/home.png",
+      "/images/cin/login.png",
+      "/images/cin/next.png",
+      "/images/cin/code.png",
+      "/images/cin/conn.png",
+      "/images/cin/park.png",
+      "/images/cin/re.png",
+      "/images/cin/seat.png",
+      "/images/cin/about.png",
+      "/images/cin/buy.png",
     ]
   };
 
@@ -668,7 +757,7 @@ function MyProjects() {
           View on GitHub <span className="github-arrow">➡️</span>
         </a>
         <button
-          onClick={() => handleViewMore("MovieExplorer")}
+          onClick={() => handleViewMore("Mega City Cab")}
           className="view-more"
           data-aos="fade-up"
           data-aos-delay="850"
@@ -768,7 +857,7 @@ function MyProjects() {
           View on GitHub <span className="github-arrow">➡️</span>
         </a>
         <button
-          onClick={() => handleViewMore("MovieExplorer")}
+          onClick={() => handleViewMore("Hepatopath")}
           className="view-more"
           data-aos="fade-up"
           data-aos-delay="850"
@@ -908,13 +997,24 @@ function MyProjects() {
         </a>
 
         <button
-          onClick={() => handleViewMore("MovieExplorer")}
+          onClick={() => handleViewMore("Alcura")}
           className="view-more"
           data-aos="fade-up"
           data-aos-delay="850"
         >
           View More<span className="github-arrow">➡️</span>
         </button>
+         <br />
+
+        <a
+        href="/pdf/Data Set Approval BIS 6035.pdf"
+        download={"Data Set Approval BIs 6035.pdf"}
+          className="view-more"
+          data-aos="fade-up"
+          data-aos-delay="850"
+        >
+          Download Report<span className="github-arrow">➡️</span>
+        </a>
       </div>
 
 
@@ -951,14 +1051,7 @@ function MyProjects() {
         >
           View on GitHub <span className="github-arrow">➡️</span>
         </a>
-        <button
-          onClick={() => handleViewMore("MovieExplorer")}
-          className="view-more"
-          data-aos="fade-up"
-          data-aos-delay="850"
-        >
-          View More<span className="github-arrow">➡️</span>
-        </button>
+        
       </div>
 
       
@@ -1043,7 +1136,7 @@ function MyProjects() {
           View on GitHub <span className="github-arrow">➡️</span>
         </a>
         <button
-          onClick={() => handleViewMore("MovieExplorer")}
+          onClick={() => handleViewMore("Cineplex")}
           className="view-more"
           data-aos="fade-up"
           data-aos-delay="850"

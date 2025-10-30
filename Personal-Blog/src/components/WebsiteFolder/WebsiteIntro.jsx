@@ -1,11 +1,97 @@
 import { FaCheck, FaCode, FaMobile, FaReact, FaRobot } from "react-icons/fa";
 import "./WebsiteIntro.css";
-import React, { useEffect } from 'react';
+import React, { useEffect , useRef, useState} from 'react';
 import AOS from 'aos';
 import WebsiteNavBar from './WebsiteNavBar';
 import 'aos/dist/aos.css';
 
 function WebsiteIntro() {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [activeSection, setActiveSection] = useState('home');
+  const scrollPositionRef = useRef(0);
+
+  const projectImages = {
+    "Amber Bakery System": [
+      "/images/C++/Home.png", 
+      "/images/C++/Intro.png",
+      "/images/C++/Admin.png",
+      "/images/C++/Notepad.png",
+      "/images/C++/New_Item.png",
+      "/images/C++/test.png"
+    ],
+
+    "Colombo Institute of Studies": [
+      "/images/CIS/use_case.png",
+      "/images/CIS/new department.png",
+      "/images/CIS/user_management.png",
+      "/images/CIS/login.png",
+      "/images/CIS/manage.png",
+      "/images/CIS/search.png",
+      "/images/CIS/db.png"
+    ],
+   
+    "Puppalate Dog Food" : [
+      "/images/dfood/usecase.png",
+      "/images/dfood/se.png",
+      "/images/dfood/reg.png",
+      "/images/dfood/nav.png",
+      "/images/dfood/edu.png",
+      "/images/dfood/vid.png",
+      "/images/dfood/ft.png",
+      "/images/dfood/cart.png"
+    ],
+
+    "Gallery Cafe" : [
+      "/images/web/conn.png",
+      "/images/web/cusine.png",
+      "/images/web/home.png",
+      "/images/web/log.png",
+      "/images/web/php.png",
+      "/images/web/res.png",
+      "/images/web/sitemap.png",
+      "/images/web/ta.png",
+      "/images/web/test.png",
+      "/images/web/wire.png"
+    ],
+
+    "TechFix" : [
+      "/images/tech/func.png",
+      "/images/tech/face.png",
+      "/images/tech/code.png",
+      "/images/tech/or.png",
+      "/images/tech/id.png",
+      "/images/tech/order.png",
+      "/images/tech/item.png",
+      "/images/tech/iname.png"
+    ], 
+
+    "Hyper-Zone" : [
+      "/images/hyp/test.png",
+      "/images/hyp/code.png",
+      "/images/hyp/ad.png",
+      "/images/hyp/add.png",
+      "/images/hyp/cart.png",
+      "/images/hyp/case.png",
+      "/images/hyp/chat.png",
+      "/images/hyp/conf.png",
+      "/images/hyp/dash.png",
+      "/images/hyp/dis.png",
+      "/images/hyp/google.png",
+      "/images/hyp/manual.png",
+      "/images/hyp/new.png",
+      "/images/hyp/otp.png",
+      "/images/hyp/pdf.png",
+      "/images/hyp/pl.png",
+      "/images/hyp/qr.png",
+      "/images/hyp/schema.png",
+      "/images/hyp/seq.png",
+      "/images/hyp/slider.png",
+      "/images/hyp/sub.png",
+      "/images/hyp/wire.png",
+    ]
+  };
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -16,9 +102,95 @@ function WebsiteIntro() {
     });
   }, []);
 
+
+    const scrollToAbout = () => {
+    document.getElementById('choosingus')?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection('choosingus');
+  };
+  
+  const scrollToSkills = () => {
+    document.getElementById('technology')?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection('technology');
+  };
+
+  const scrollToProjects = () => {
+    document.getElementById('sprojects')?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection('sprojects');
+  };
+
+  const scrollToContact = () => {
+    document.getElementById('sstories')?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection('sstories');
+  };
+ 
+   const handleViewMore = (projectName) => {
+    scrollPositionRef.current = window.scrollY;
+    setSelectedProject(projectName);
+    setCurrentImageIndex(0);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+   
+    setTimeout(() => {
+      window.scrollTo(0, scrollPositionRef.current);
+    })
+  };
+
+  const nextImage = () => {
+    if (selectedProject) {
+      const images = projectImages[selectedProject];
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedProject) {
+      const images = projectImages[selectedProject];
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Escape") {
+      handleCloseModal();
+    } else if (e.key === "ArrowLeft") {
+      prevImage();
+    } else if (e.key === "ArrowRight") {
+      nextImage();
+    }
+  };
+
+  // Add event listener for keyboard navigation
+  useEffect(() => {
+    if (selectedProject) {
+      document.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden"; // Prevent scrolling
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedProject]);
+
   return (
     <>
-     |<WebsiteNavBar/>
+     |<WebsiteNavBar 
+          
+        scrollToAbout={scrollToAbout}
+        scrollToSkills={scrollToSkills}
+        scrollToProjects={scrollToProjects}
+        scrollToContact={scrollToContact}
+        activeSection={activeSection}
+        />
       {/* First Cyber Section */}
       <div className="cyber-background cyber-background-first">
         <div className="tech-background">
@@ -55,7 +227,7 @@ function WebsiteIntro() {
         </div>
       </div>
 
-      <div className="web-app">
+      <div className="web-app"  id="choosingus">
         <div className="programming-languages is-visible" data-aos="fade-down" data-aos-duration="800">
           Why Choosing us?
         </div>
@@ -107,8 +279,8 @@ function WebsiteIntro() {
         </div>
       
 
-      <div className="intro-contain">
-        <div className="programming-languages is-visible" data-aos="fade-down" data-aos-duration="800">
+      <div className="intro-contain" id="technology">
+        <div className="programming-languages is-visible" data-aos="fade-down" data-aos-duration="800" >
           Cutting Edge Technology Stack
         </div>
         <div className="services-and-code-section-2">
@@ -159,7 +331,7 @@ function WebsiteIntro() {
         </div>
       </div>
 
-      <div className="background-webservice">
+      <div className="background-webservice" id="sprojects">
         <div className="heading" data-aos="fade-up" data-aos-duration="1000">
           <h1>Web Development Success Stories</h1>
         </div>
@@ -188,10 +360,18 @@ function WebsiteIntro() {
           <a href="#" className="github">
             View on GitHub <span className="github-arrow">➡</span>
           </a>
+           <button
+          onClick={() => handleViewMore("Amber Bakery System")}
+          className="view-more"
+          data-aos="fade-up"
+          data-aos-delay="750"
+        >
+          View More<span className="github-arrow">➡️</span>
+        </button>
         </div>
       </div>
 
-      <div className="background-website">
+      <div className="background-website" id="sstories">
         <div className="heading" data-aos="fade-up" data-aos-duration="1000">
           <h1>Web Development Success Stories</h1>
         </div>
@@ -267,6 +447,54 @@ function WebsiteIntro() {
           </div>
         </div>
       </div>
+
+      {selectedProject && (
+        <div className="modal-overlay" onClick={handleCloseModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={handleCloseModal}>
+              ×
+            </button>
+
+            <div className="carousel">
+              <button
+                className="carousel-button carousel-button-prev"
+                onClick={prevImage}
+              >
+                ‹
+              </button>
+
+              <div className="carousel-image-container">
+                <img
+                  src={projectImages[selectedProject][currentImageIndex]}
+                  alt={`${selectedProject} - Image ${currentImageIndex + 1}`}
+                  className="carousel-image"
+                />
+                <div className="image-counter">
+                  {currentImageIndex + 1} /{" "}
+                  {projectImages[selectedProject].length}
+                </div>
+              </div>
+
+              <button
+                className="carousel-button carousel-button-next"
+                onClick={nextImage}
+              >
+                ›
+              </button>
+            </div>
+
+            <div className="modal-project-info">
+              <h3>{selectedProject}</h3>
+              <p>
+                Use arrow keys or click the arrows to navigate through images
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+
+       
     </>
   );
 }

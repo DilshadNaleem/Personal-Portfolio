@@ -1,10 +1,14 @@
 import { FaCheck, FaCode, FaMobile, FaReact, FaRobot } from "react-icons/fa";
 import "./WebsiteIntro.css";
-import React, { useEffect } from 'react';
+import React, { useEffect , useState} from 'react';
 import AOS from 'aos';
+import WebsiteNavBar from './WebsiteNavBar';
 import 'aos/dist/aos.css';
 
 function Ai_Development() {
+
+  const [activeSection, setActiveSection] = useState('home');
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -15,8 +19,37 @@ function Ai_Development() {
     });
   }, []);
 
+
+    const scrollToAbout = () => {
+    document.getElementById('choosingus')?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection('choosingus');
+  };
+  
+  const scrollToSkills = () => {
+    document.getElementById('technology')?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection('technology');
+  };
+
+  const scrollToProjects = () => {
+    document.getElementById('sprojects')?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection('sprojects');
+  };
+
+  const scrollToContact = () => {
+    document.getElementById('sstories')?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection('sstories');
+  };
+ 
   return (
     <>
+     |<WebsiteNavBar 
+          
+        scrollToAbout={scrollToAbout}
+        scrollToSkills={scrollToSkills}
+        scrollToProjects={scrollToProjects}
+        scrollToContact={scrollToContact}
+        activeSection={activeSection}
+        />
       {/* First Cyber Section */}
       <div className="cyber-background cyber-background-first">
         <div className="tech-background">
@@ -49,16 +82,16 @@ function Ai_Development() {
         </div>
 
         <div className="cyber-contact" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
-          <button className="cyber-button">Request Quote</button>
+          <a href="mailto:dilshadnaleem13@gmail.com?subject=Web Development Quote&body=Hi, I'm interested in your services.%0A%0AProject Details:%0A- Type: %0A- Timeline: %0A- Budget:" className="cyber-button">Request Quote</a>
         </div>
       </div>
 
-      <div className="web-app">
+      <div className="web-app"  id="choosingus">
         <div className="programming-languages is-visible" data-aos="fade-down" data-aos-duration="800">
           Why Choosing us?
         </div>
 
-        <div className="intro-container-2">
+       
           <div className="services-and-code-section-2">
             <div className="services-boxes-grid-2">
               {/* Service Box 1: React & Next.js Development */}
@@ -103,10 +136,10 @@ function Ai_Development() {
             </div>
           </div>
         </div>
-      </div>
+      
 
-      <div className="intro-contain">
-        <div className="programming-languages is-visible" data-aos="fade-down" data-aos-duration="800">
+      <div className="intro-contain" id="technology">
+        <div className="programming-languages is-visible" data-aos="fade-down" data-aos-duration="800" >
           Cutting Edge Technology Stack
         </div>
         <div className="services-and-code-section-2">
@@ -157,7 +190,7 @@ function Ai_Development() {
         </div>
       </div>
 
-      <div className="background-webservice">
+      <div className="background-webservice" id="sprojects">
         <div className="heading" data-aos="fade-up" data-aos-duration="1000">
           <h1>Web Development Success Stories</h1>
         </div>
@@ -184,12 +217,12 @@ function Ai_Development() {
             <span className="language-tag">Medical AI</span>
           </div>
           <a href="#" className="github">
-            View on GitHub <span className="github-arrow">➡️</span>
+            View on GitHub <span className="github-arrow">➡</span>
           </a>
         </div>
       </div>
 
-      <div className="background-website">
+      <div className="background-website" id="sstories">
         <div className="heading" data-aos="fade-up" data-aos-duration="1000">
           <h1>Web Development Success Stories</h1>
         </div>
@@ -259,7 +292,9 @@ function Ai_Development() {
             Let's build something amazing together. Get in touch for a free consultation.
           </div>
           <div className="cyber-contact" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
-            <button className="cyber-button">Request Quote</button>
+           <a href="mailto:dilshadnaleem13@gmail.com?subject=Web Development Quote&body=Hi, I'm interested in your services.%0A%0AProject Details:%0A- Type: %0A- Timeline: %0A- Budget:" className="cyber-button">
+    Request Quote
+  </a>
           </div>
         </div>
       </div>
@@ -267,4 +302,4 @@ function Ai_Development() {
   );
 }
 
-export default Ai_Development;
+export default Ai_Development;

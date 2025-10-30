@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../Navbar.css';
 
 function WebsiteNavbar({ 
@@ -11,6 +11,7 @@ function WebsiteNavbar({
   activeSection 
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate(); // Add this hook
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -25,7 +26,11 @@ function WebsiteNavbar({
     closeMenu();
   };
 
-  
+  // Add this function for Home navigation
+  const handleHomeClick = () => {
+    navigate('/'); // Navigate to home route
+    closeMenu();
+  };
 
   return (
     <nav className="navbar">
@@ -34,7 +39,7 @@ function WebsiteNavbar({
         <div className="nav-brand">
           <button 
             className={`brand-button ${activeSection === 'home' ? 'active' : ''}`}
-            onClick={() => handleNavClick(scrollToHome)}
+            onClick={handleHomeClick} // Use the new function here
           >
             <span className="brand-name">Mohamed Dilshad</span>
             <span className="brand-subtitle">NALEEM</span>
@@ -43,50 +48,54 @@ function WebsiteNavbar({
 
         {/* Navigation Links */}
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          {/* Home Link - Navigates to "/" */}
           <li>
-            <button 
-              className={activeSection === 'home' ? 'active' : ''}
-              onClick={() => handleNavClick(scrollToHome)}
+            <Link 
+              to="/"
+              className={activeSection === 'home' ? 'active nav-link' : 'nav-link'}
+              onClick={closeMenu}
             >
               Home
-            </button>
+            </Link>
           </li>
+          
+          {/* Other navigation buttons remain the same */}
           <li>
             <button 
-              className={activeSection === 'about' ? 'active' : ''}
+              className={activeSection === 'choosingus' ? 'active' : ''}
               onClick={() => handleNavClick(scrollToAbout)}
             >
-              About
+              Why Choosing Us
             </button>
           </li>
           <li>
             <button 
-              className={activeSection === 'skills' ? 'active' : ''}
+              className={activeSection === 'technology' ? 'active' : ''}
               onClick={() => handleNavClick(scrollToSkills)}
             >
-              Skills
+              Technology
             </button>
           </li>
           <li>
             <button 
-              className={activeSection === 'projects' ? 'active' : ''}
+              className={activeSection === 'sprojects' ? 'active' : ''}
               onClick={() => handleNavClick(scrollToProjects)}
             >
-              Projects
+              Web Projects
             </button>
           </li>
           <li>
             <button 
-              className={activeSection === 'contact' ? 'active' : ''}
+              className={activeSection === 'sstories' ? 'active' : ''}
               onClick={() => handleNavClick(scrollToContact)}
             >
-              Contact
+              Success Stories
             </button>
           </li>
 
-            <li>
+          <li>
             <Link 
-             to="/services"
+              to="/services"
               className="nav-external-link"
               onClick={closeMenu}
             >
