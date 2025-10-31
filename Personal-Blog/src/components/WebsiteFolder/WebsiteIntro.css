@@ -453,6 +453,7 @@
 
   .service-box-2 {
     padding: 20px;
+    height: auto;
   }
 
   .service-icon-bg-2 {
@@ -471,7 +472,8 @@
   border-radius: 15px;
   padding: 30px;
   display: flex;
-  height: 600px;
+  height: auto;
+  width: auto;
   flex-direction: column;
   align-items: flex-start;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);

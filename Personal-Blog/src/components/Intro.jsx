@@ -205,7 +205,14 @@ AI.integrate(solution);`}
                         <FaHandshake className="button-icon" /> Hire Me
                     </button>
 
-                    <button className="download-CV" data-aos="zoom-in" data-aos-delay="800">
+                    <button
+                   onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/pdf/Dilshad Naleem.pdf';
+                    link.download = 'Dilshad Naleem';
+                    link.click();
+                   }}
+                    className="download-CV" data-aos="zoom-in" data-aos-delay="800">
                         <FaDownload className="button-icon" /> Download CV
                     </button>
                 </div>

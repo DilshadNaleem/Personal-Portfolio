@@ -402,7 +402,7 @@ function MyProjects() {
             <strong>PHP, HTML, CSS, JavaScript</strong>
             featuring multi-role authentication and comprehensive management
             systems.
-          </div>
+          </div> <br />
 
           <div className="roles-container">
             <div className="role-section">
@@ -411,7 +411,7 @@ function MyProjects() {
                 <li>Browse site content and view details</li>
                 <li>Access public information</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">🔐 Registered Customer</h4>
@@ -422,7 +422,7 @@ function MyProjects() {
                 <li>Review & promotion management</li>
                 <li>Advanced search & filters</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">👨‍💼 Staff</h4>
@@ -433,7 +433,7 @@ function MyProjects() {
                 <li>Customer parking oversight</li>
                 <li>Search & filter capabilities</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">⚙️ Admin</h4>
@@ -489,8 +489,8 @@ function MyProjects() {
           <div className="project-description">
             Fullstack web application built with <strong>SOAP, ASPX, C#</strong>
             featuring multi-role authentication and comprehensive management
-            systems.
-          </div>
+            systems. 
+          </div> <br />
 
           <div className="roles-container">
             <div className="role-section">
@@ -500,7 +500,7 @@ function MyProjects() {
                 <li>View Order History</li>
                 <li>Search and Filters</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">⚙️ Admin</h4>
@@ -559,7 +559,7 @@ function MyProjects() {
             <strong>PHP, HTML, CSS, JavaScript, and MySQL </strong>, featuring
             advanced user management, real-time communication, and automated
             business intelligence.
-          </div>
+          </div> <br />
 
           <div className="highlights-container">
             <h4 className="highlights-title">🌟 Key Features</h4>
@@ -573,7 +573,7 @@ function MyProjects() {
               <li>Wishlist and cart functionality</li>
               <li>Location-based services</li>
             </ul>
-          </div>
+          </div> <br />
 
           <div className="roles-container">
             <div className="role-section">
@@ -582,7 +582,7 @@ function MyProjects() {
                 <li>Browse products and view details</li>
                 <li>Access public content and catalogs</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">🔐 Registered Customer</h4>
@@ -596,7 +596,7 @@ function MyProjects() {
                 <li>Refund requests and processing</li>
                 <li>Product reviews and feedback</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">💼 Support Staff</h4>
@@ -607,7 +607,7 @@ function MyProjects() {
                 <li>Direct messaging with administrators</li>
                 <li>Video conference capabilities</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">🤝 Business Agent</h4>
@@ -618,7 +618,7 @@ function MyProjects() {
                 <li>Customer relationship management</li>
                 <li>Real-time stock monitoring</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">⚙️ System Administrator</h4>
@@ -685,7 +685,7 @@ function MyProjects() {
             Fullstack web application built with <strong>Java, REST APIs, HTML, CSS, Javascript </strong>
             featuring multi-role authentication and comprehensive management
             systems.
-          </div>
+          </div> <br />
 
         <div className="highlights-container">
             <h4 className="highlights-title">🌟 Key Features</h4>
@@ -697,7 +697,7 @@ function MyProjects() {
               <li>Advanced Validaitons</li>
             
             </ul>
-          </div>
+          </div> <br />
 
           <div className="roles-container">
             <div className="role-section">
@@ -709,7 +709,7 @@ function MyProjects() {
                 <li>Fine Management with dues</li>
                 <li>Realtime notifications</li>
               </ul>
-            </div>
+            </div> <br />
 
              <div className="role-section">
               <h4 className="role-title">🚗 Driver</h4>
@@ -719,7 +719,7 @@ function MyProjects() {
                 <li>Add new Vehicles</li>
                 <li>Profit & Loss Calculations</li>
               </ul>
-            </div>
+            </div> <br />
             
             <div className="role-section">
               <h4 className="role-title">⚙️ Admin</h4>
@@ -782,7 +782,7 @@ function MyProjects() {
           <div className="project-description">
             Fullstack web application built with <strong>Java, RESTful APIs, React, Python </strong>
             featuring advanced machine learning model to predict Cirrhosis.
-          </div>
+          </div> <br />
 
         <div className="highlights-container">
             <h4 className="highlights-title">🌟 Key Features</h4>
@@ -791,7 +791,7 @@ function MyProjects() {
               <li>Two-factor authentication & password recovery</li>
               <li>Real-time notifications.</li>
               <li>Advanced Machine learning Model</li>
-              <li>Advanced Validaitons</li>
+              <li>Advanced Validaitons</li> <br />
             
             </ul>
           </div>
@@ -807,7 +807,7 @@ function MyProjects() {
                 <li>Realtime notifications</li>
                  <li>Advanced Search and Filters</li>
               </ul>
-            </div>
+            </div> <br />
 
             
             
@@ -885,7 +885,7 @@ function MyProjects() {
           <div className="project-description">
             Fullstack web application built with <strong>Java, REST APIs, React, Python </strong>
             featuring advanced machine learning modles.
-          </div>
+          </div> <br />
 
         <div className="highlights-container">
             <h4 className="highlights-title">🌟 Key Features</h4>
@@ -899,7 +899,7 @@ function MyProjects() {
               <li>Auto Recommendations</li>
               <li>Predict Diseases based on images and description</li>
               <li>Voice recogniiton UI</li>
-              <li>Dual Mode (Light and Dark)</li>
+              <li>Dual Mode (Light and Dark)</li> <br />
             </ul>
           </div>
 
@@ -914,7 +914,7 @@ function MyProjects() {
                 <li>Manage Appointments</li>
                 <li>Send Real time SOS using Reatime</li>
                 <li>Realtime notifications</li>
-                <li>Advanced Search and Filters</li>
+                <li>Advanced Search and Filters</li> <br />
               </ul>
             </div>
 
@@ -932,8 +932,8 @@ function MyProjects() {
                 <li>Calculate Profit with analytics and graphical view</li>
                 <li>Manage Doctor Prices</li>
                 <li>Advanced Search and Filters</li>
-                 <li>Realtime notifications</li>
-              </ul>
+                 <li>Realtime notifications</li> <br />
+              </ul> 
             </div>
 
 
@@ -1057,7 +1057,7 @@ function MyProjects() {
       
       <div className="card" data-aos="fade-up" data-aos-delay="300">
         <div className="card-title" data-aos="fade-right" data-aos-delay="400">
-          Cinplex - Movie Theatre
+          Cineplex - Movie Theatre
         </div>
         <div
           className="card-heading"
@@ -1072,7 +1072,7 @@ function MyProjects() {
             <strong>PHP, HTML, CSS, JavaScript</strong>
             featuring multi-role authentication and comprehensive management
             systems.
-          </div>
+          </div> <br />
 
           <div className="roles-container">
             <div className="role-section">
@@ -1081,7 +1081,7 @@ function MyProjects() {
                 <li>Browse site content and view details</li>
                 <li>Access public information</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">🔐 Registered Customer</h4>
@@ -1092,7 +1092,7 @@ function MyProjects() {
                 <li>Review & promotion management</li>
                 <li>Advanced search & filters</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">👨‍💼 Staff</h4>
@@ -1103,7 +1103,7 @@ function MyProjects() {
                 <li>Customer parking oversight</li>
                 <li>Search & filter capabilities</li>
               </ul>
-            </div>
+            </div> <br />
 
             <div className="role-section">
               <h4 className="role-title">⚙️ Admin</h4>

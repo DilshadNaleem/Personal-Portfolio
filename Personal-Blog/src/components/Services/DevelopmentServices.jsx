@@ -62,9 +62,12 @@ function DevelopmentServices() {
                   <span className="lang">JavaScript</span>
                   <span className="lang">React Js</span>
                   <span className="lang">HTML/CSS</span>
-                  <span className="lang">REST APIs/Fast API</span>
-                  <span className="lang">Springt</span>
+                  <span className="lang">REST APIs / Fast API</span>
+                  <span className="lang">Spring</span>
                   <span className="lang">Spring Boot</span>
+                  <span className="lang">Flask</span>
+                  <span className="lang">PHP</span>
+                  <span className="lang">C#</span>
                 </div>
                 <div className="description">
                    
@@ -81,12 +84,15 @@ function DevelopmentServices() {
                 <h3>AI Development</h3>
                 <p>Custom React applications with modern architecture, optimized performance, and scalable backends</p>
                 <div className="languages-container">
-                  <span className="lang">JavaScript</span>
-                  <span className="lang">React Js</span>
-                  <span className="lang">HTML/CSS</span>
-                  <span className="lang">REST APIs/Fast API</span>
-                  <span className="lang">Springt</span>
-                  <span className="lang">Spring Boot</span>
+                  <span className="lang">CI / CD</span>
+                  <span className="lang">Random Forest</span>
+                  <span className="lang">Hyper parameter tuning</span>
+                  <span className="lang">Random Forest</span>
+                  <span className="lang">Tensorflow</span>
+                  <span className="lang">CNN</span>
+                  <span className="lang">ANN</span>
+                  <span className="lang">Sckit learn</span>
+                  <span className="lang">Flask</span>
                 </div>
                 <div className="description">
                     
@@ -103,12 +109,7 @@ function DevelopmentServices() {
                 <h3>Mobile Development</h3>
                 <p>Custom React applications with modern architecture, optimized performance, and scalable backends</p>
                 <div className="languages-container">
-                  <span className="lang">JavaScript</span>
-                  <span className="lang">React Js</span>
-                  <span className="lang">HTML/CSS</span>
-                  <span className="lang">REST APIs/Fast API</span>
-                  <span className="lang">Springt</span>
-                  <span className="lang">Spring Boot</span>
+                  <span className="lang">Java</span>
                 </div>
                 <div className="description">
                    
@@ -128,9 +129,7 @@ function DevelopmentServices() {
                   <span className="lang">JavaScript</span>
                   <span className="lang">React Js</span>
                   <span className="lang">HTML/CSS</span>
-                  <span className="lang">REST APIs/Fast API</span>
-                  <span className="lang">Springt</span>
-                  <span className="lang">Spring Boot</span>
+                  <span className="lang">Spring web</span>
                 </div>
                 <div className="description">
                  
@@ -147,12 +146,8 @@ function DevelopmentServices() {
                 <h3>Cloud Services / Database Management</h3>
                 <p>Custom React applications with modern architecture, optimized performance, and scalable backends</p>
                 <div className="languages-container">
-                  <span className="lang">JavaScript</span>
-                  <span className="lang">React Js</span>
-                  <span className="lang">HTML/CSS</span>
-                  <span className="lang">REST APIs/Fast API</span>
-                  <span className="lang">Springt</span>
-                  <span className="lang">Spring Boot</span>
+                  <span className="lang">AWS EC2</span>
+                  <span className="lang">AWS Lambda</span>
                 </div>
                 <div className="description">
                    

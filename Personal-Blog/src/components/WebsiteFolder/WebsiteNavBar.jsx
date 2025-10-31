@@ -73,7 +73,7 @@ function WebsiteNavbar({
               className={activeSection === 'technology' ? 'active' : ''}
               onClick={() => handleNavClick(scrollToSkills)}
             >
-              Technology
+              Technologies
             </button>
           </li>
           <li>
@@ -81,7 +81,7 @@ function WebsiteNavbar({
               className={activeSection === 'sprojects' ? 'active' : ''}
               onClick={() => handleNavClick(scrollToProjects)}
             >
-              Web Projects
+              Projects
             </button>
           </li>
           <li>
