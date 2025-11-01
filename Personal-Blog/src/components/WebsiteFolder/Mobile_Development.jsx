@@ -60,161 +60,15 @@ function Ai_Development() {
   const scrollPositionRef = useRef(0);
 
   const projectImages = {
-    "Amber Bakery System": [
-      "/images/C++/Home.png",
-      "/images/C++/Intro.png",
-      "/images/C++/Admin.png",
-      "/images/C++/Notepad.png",
-      "/images/C++/New_Item.png",
-      "/images/C++/test.png",
-    ],
-
-    "Colombo Institute of Studies": [
-      "/images/CIS/use_case.png",
-      "/images/CIS/new department.png",
-      "/images/CIS/user_management.png",
-      "/images/CIS/login.png",
-      "/images/CIS/manage.png",
-      "/images/CIS/search.png",
-      "/images/CIS/db.png",
-    ],
-
-    "Gallery Cafe": [
-      "/images/web/conn.png",
-      "/images/web/cusine.png",
-      "/images/web/home.png",
-      "/images/web/log.png",
-      "/images/web/php.png",
-      "/images/web/res.png",
-      "/images/web/sitemap.png",
-      "/images/web/ta.png",
-      "/images/web/test.png",
-      "/images/web/wire.png",
-    ],
-
-    TechFix: [
-      "/images/tech/func.png",
-      "/images/tech/face.png",
-      "/images/tech/code.png",
-      "/images/tech/or.png",
-      "/images/tech/id.png",
-      "/images/tech/order.png",
-      "/images/tech/item.png",
-      "/images/tech/iname.png",
-    ],
-
-    "Hyper-Zone": [
-      "/images/hyp/test.png",
-      "/images/hyp/code.png",
-      "/images/hyp/ad.png",
-      "/images/hyp/add.png",
-      "/images/hyp/cart.png",
-      "/images/hyp/case.png",
-      "/images/hyp/chat.png",
-      "/images/hyp/conf.png",
-      "/images/hyp/dash.png",
-      "/images/hyp/dis.png",
-      "/images/hyp/google.png",
-      "/images/hyp/manual.png",
-      "/images/hyp/new.png",
-      "/images/hyp/otp.png",
-      "/images/hyp/pdf.png",
-      "/images/hyp/pl.png",
-      "/images/hyp/qr.png",
-      "/images/hyp/schema.png",
-      "/images/hyp/seq.png",
-      "/images/hyp/slider.png",
-      "/images/hyp/sub.png",
-      "/images/hyp/wire.png",
-    ],
-
-    Hepatopath: [
-      "/images/hepo/use.png",
-      "/images/hepo/reset.png",
-      "/images/hepo/cir.png",
-      "/images/hepo/cirr.png",
-      "/images/hepo/cnn.png",
-      "/images/hepo/dp.png",
-      "/images/hepo/dp.png",
-      "/images/hepo/graph.png",
-      "/images/hepo/hepo.png",
-      "/images/hepo/info.png",
-      "/images/hepo/login.png",
-      "/images/hepo/model.png",
-      "/images/hepo/pat.png",
-      "/images/hepo/pre.png",
-    ],
-
-    Alcura: [
-      "/images/alcura/sosdash.png",
-      "/images/alcura/ssos.png",
-      "/images/alcura/numberep.png",
-      "/images/alcura/flogin.png",
-      "/images/alcura/enface.png",
-      "/images/alcura/mlprogress.png",
-      "/images/alcura/navi.png",
-      "/images/alcura/newdi.png",
-      "/images/alcura/viewd.png",
-      "/images/alcura/vima.png",
-      "/images/alcura/newdima.png",
-      "/images/alcura/newh.png",
-      "/images/alcura/pestal.png",
-      "/images/alcura/app.png",
-      "/images/alcura/appma.png",
-      "/images/alcura/auto.png",
-      "/images/alcura/book.png",
-      "/images/alcura/com.png",
-      "/images/alcura/cont.png",
-      "/images/alcura/cus.png",
-      "/images/alcura/dash.png",
-      "/images/alcura/davaila.png",
-      "/images/alcura/desdi.png",
-      "/images/alcura/dich.png",
-      "/images/alcura/dinfo.png",
-      "/images/alcura/diui.png",
-      "/images/alcura/dpre.png",
-      "/images/alcura/dravai.png",
-      "/images/alcura/dres.png",
-      "/images/alcura/dsimage.png",
-      "/images/alcura/dvali.png",
-      "/images/alcura/edisease.png",
-      "/images/alcura/j.png",
-      "/images/alcura/junit.png",
-      "/images/alcura/plan.png",
-      "/images/alcura/po.png",
-      "/images/alcura/post.png",
-      "/images/alcura/profit.png",
-      "/images/alcura/swot.png",
-      "/images/alcura/tat.png",
-      "/images/alcura/tct.png",
-      "/images/alcura/tdt.png",
-      "/images/alcura/view.png",
-    ],
-
-    "Mega City Cab": [
-      "/images/mega/cj.png",
-      "/images/mega/val.png",
-      "/images/mega/junit.png",
-      "/images/mega/conf.png",
-      "/images/mega/confir.png",
-      "/images/mega/uni.png",
-      "/images/mega/dp.png",
-      "/images/mega/his.png",
-      "/images/mega/otp.png",
-      "/images/mega/re.png",
-    ],
-
-    Cineplex: [
-      "/images/cin/home.png",
-      "/images/cin/login.png",
-      "/images/cin/next.png",
-      "/images/cin/code.png",
-      "/images/cin/conn.png",
-      "/images/cin/park.png",
-      "/images/cin/re.png",
-      "/images/cin/seat.png",
-      "/images/cin/about.png",
-      "/images/cin/buy.png",
+    "Puppalate Dog Food" : [
+      "/images/dfood/usecase.png",
+      "/images/dfood/se.png",
+      "/images/dfood/reg.png",
+      "/images/dfood/nav.png",
+      "/images/dfood/edu.png",
+      "/images/dfood/vid.png",
+      "/images/dfood/ft.png",
+      "/images/dfood/cart.png"
     ],
   };
 
@@ -542,21 +396,7 @@ function Ai_Development() {
               </p>
             </div>
 
-            <div
-              className="service-box-4"
-              data-aos="flip-left"
-              data-aos-delay="100"
-              data-aos-duration="800"
-            >
-              <div className="service-icon-bg">
-                <FaFire className="service-icon" />
-              </div>
-              <h3>Flutter</h3>
-              <p>
-                Google's UI toolkit for natively compiled applications from a
-                single codebase
-              </p>
-            </div>
+           
 
             {/* Mobile AI & Cloud Technologies */}
             <div
