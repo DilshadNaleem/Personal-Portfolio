@@ -169,6 +169,10 @@ function App() {
           path="/services/Cloud&Databases_Management" 
           element={<CloudAndDatabases />} 
         />
+
+        <Route
+        path='/blog' element={<Blog></Blog>}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );
