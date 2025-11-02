@@ -8,6 +8,7 @@ import MyProjects from "./components/MyProjects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import Services from "./components/Services/Services";
 import WebsiteIntro from './components/WebsiteFolder/WebsiteIntro';
 import Blog from "./components/Blog";
 import ServiceJoin from './components/Services/ServiceJoin';
@@ -30,9 +31,9 @@ const PortfolioPage = ({ homeRef, aboutRef, skillsRef, projectsRef, contactRef, 
       
       <div ref={homeRef} id="home">
         <Body 
-          scrollToProjects={() => scrollToSection(projectsRef)}
-          scrollToContact={() => scrollToSection(contactRef)}
-        />
+        scrollToProjects={() => scrollToSection(projectsRef)}
+         scrollToContact={() => scrollToSection(contactRef)}
+         />
       </div>
       
       <div ref={aboutRef} id="about">
@@ -56,28 +57,26 @@ const PortfolioPage = ({ homeRef, aboutRef, skillsRef, projectsRef, contactRef, 
   );
 };
 
+
 function App() {
+  // Refs for each section
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
   
+  // State to track active section
   const [activeSection, setActiveSection] = useState('home');
-  const location = useLocation();
 
+  // Function to scroll to a specific section
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Fix: Only set up intersection observer on home page
+  // Intersection Observer to track which section is in view
+  // NOTE: This useEffect should only run when on the main path ("/")
   useEffect(() => {
-    // Only run this on the home page
-    if (location.pathname !== '/') {
-      setActiveSection(''); // Clear active section on other pages
-      return;
-    }
-
     const sections = [
       { id: 'home', ref: homeRef },
       { id: 'about', ref: aboutRef },
@@ -87,6 +86,7 @@ function App() {
     ];
 
     const observers = [];
+
     const options = {
       root: null,
       rootMargin: '-20% 0px -70% 0px',
@@ -96,7 +96,9 @@ function App() {
     sections.forEach(({ id, ref }) => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting && location.pathname === '/') {
+          // You should check the current path if this App component renders on all routes.
+          // For simplicity with the Routes structure below, we'll assume it's fine.
+          if (entry.isIntersecting) {
             setActiveSection(id);
           }
         });
@@ -111,41 +113,67 @@ function App() {
     return () => {
       observers.forEach(observer => observer.disconnect());
     };
-  }, [location.pathname]); // Add location.pathname as dependency
-
-  return (
-    <Routes>
-      <Route 
-        path="/" 
-        element={
-          <PortfolioPage 
-            homeRef={homeRef}
-            aboutRef={aboutRef}
-            skillsRef={skillsRef}
-            projectsRef={projectsRef}
-            contactRef={contactRef}
-            activeSection={activeSection}
-            scrollToSection={scrollToSection}
-          />
-        } 
-      />
-      
-      <Route path="/services" element={<ServiceJoin />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/services/WebApplication" element={<WebsiteIntro />} />
-      <Route path="/services/AI_Development" element={<Ai_Development />} />
-      <Route path="/services/Mobile_Development" element={<Mobile_Development/>} />
-      <Route path="/services/FrontEnd_Development" element={<FrontEnd_Development />} />
-      <Route path="/services/Cloud&Databases_Management" element={<CloudAndDatabases />} />
-    </Routes>
-  );
-}
-
-// Wrap App with BrowserRouter
-export default function Root() {
+  }, []); 
   return (
     <BrowserRouter>
-      <App />
+      <Routes>
+        {/* Route for the main portfolio page (which includes NavBar and Footer) */}
+        <Route 
+          path="/" 
+          element={
+            <PortfolioPage 
+              homeRef={homeRef}
+              aboutRef={aboutRef}
+              skillsRef={skillsRef}
+              projectsRef={projectsRef}
+              contactRef={contactRef}
+              activeSection={activeSection}
+              scrollToSection={scrollToSection}
+            />
+          } 
+        />
+        
+        
+        <Route 
+          path="/services" 
+          element={<ServiceJoin />} 
+        />
+        
+        <Route 
+          path="/blog" 
+          element={<Blog />} 
+        />
+        
+         <Route 
+          path="/services/WebApplication" 
+          element={<WebsiteIntro />} 
+        />
+
+        <Route 
+          path="/services/AI_Development" 
+          element={<Ai_Development />} 
+        />
+
+
+         <Route 
+          path="/services/Mobile_Development" 
+          element={<Mobile_Development/>} 
+        />
+
+         <Route 
+          path="/services/FrontEnd_Development" 
+          element={<FrontEnd_Development />} 
+        />
+
+         <Route 
+          path="/services/Cloud&Databases_Management" 
+          element={<CloudAndDatabases />} 
+        />
+
+       
+      </Routes>
     </BrowserRouter>
   );
 }
+
+export default App;
