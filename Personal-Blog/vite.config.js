@@ -1,17 +1,13 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-
-   server: {
+  server: {
     fs: {
-      allow: ['..', 'node_modules/devicon'] // Allow devicon fonts
+      allow: ['..', 'node_modules/devicon']
     },
-    server: {
-      historyApiFallback: true
-    }
+    historyApiFallback: true
   },
   assetsInclude: ['**/*.ttf', '**/*.woff', '**/*.woff2']
 })
