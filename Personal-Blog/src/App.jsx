@@ -65,7 +65,7 @@ function App() {
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
-  const location = useLocation();
+  
   // State to track active section
   const [activeSection, setActiveSection] = useState('home');
 
@@ -84,7 +84,6 @@ function App() {
       { id: 'projects', ref: projectsRef },
       { id: 'contact', ref: contactRef },
     ];
-    
 
     const observers = [];
 
@@ -142,7 +141,6 @@ function App() {
         
         <Route path="*" element={<Home />}
         />
-
         <Route 
           path="/blog" 
           element={<Blog />} 
