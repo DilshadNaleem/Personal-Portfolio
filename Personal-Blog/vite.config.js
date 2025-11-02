@@ -9,7 +9,9 @@ export default defineConfig({
     fs: {
       allow: ['..', 'node_modules/devicon'] // Allow devicon fonts
     },
-    
+    server: {
+      historyApiFallback: true
+    }
   },
   assetsInclude: ['**/*.ttf', '**/*.woff', '**/*.woff2']
 })
