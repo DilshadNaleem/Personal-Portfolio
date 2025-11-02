@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "src": "/blog",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/services",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/services/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
