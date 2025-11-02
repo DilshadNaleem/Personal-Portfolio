@@ -1,12 +1,13 @@
 {
-  "routes": [
+  "routes" :  [
     {
-      "src": "/blog",
-      "dest": "/index.html"
+      "src": "",
+      "dest" : "/"
     },
+
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src" : "/blog",
+      "dest" : "/"
     }
   ]
 }
