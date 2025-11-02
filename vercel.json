@@ -1,20 +1,8 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/blog",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/services",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/services/(.*)",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
