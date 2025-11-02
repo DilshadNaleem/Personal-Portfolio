@@ -7,7 +7,7 @@ import Skills from './components/Skills';
 import MyProjects from "./components/MyProjects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, HashRouter } from 'react-router-dom';
 import Services from "./components/Services/Services";
 import WebsiteIntro from './components/WebsiteFolder/WebsiteIntro';
 import Blog from "./components/Blog";
@@ -115,7 +115,7 @@ function App() {
     };
   }, []); 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         {/* Route for the main portfolio page (which includes NavBar and Footer) */}
         <Route 
@@ -173,7 +173,7 @@ function App() {
 
        
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
