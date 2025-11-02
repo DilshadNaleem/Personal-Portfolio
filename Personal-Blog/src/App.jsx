@@ -57,79 +57,67 @@ const PortfolioPage = ({ homeRef, aboutRef, skillsRef, projectsRef, contactRef, 
   );
 };
 
-// Layout component for pages that need NavBar and Footer
-const PageLayout = ({ children }) => {
-  return (
-    <>
-      <NavBar />
-      {children}
-      <Footer />
-    </>
-  );
-};
 
 function App() {
-  // Refs for each section (only used on main portfolio page)
+  // Refs for each section
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
   
-  // State to track active section (only for main portfolio page)
+  // State to track active section
   const [activeSection, setActiveSection] = useState('home');
 
-  // Function to scroll to a specific section (only for main portfolio page)
+  // Function to scroll to a specific section
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Intersection Observer - only for main portfolio page
+  // Intersection Observer to track which section is in view
+  // NOTE: This useEffect should only run when on the main path ("/")
   useEffect(() => {
-    // Only set up intersection observer if we're on the home page
-    const isHomePage = window.location.pathname === '/';
-    
-    if (isHomePage) {
-      const sections = [
-        { id: 'home', ref: homeRef },
-        { id: 'about', ref: aboutRef },
-        { id: 'skills', ref: skillsRef },
-        { id: 'projects', ref: projectsRef },
-        { id: 'contact', ref: contactRef },
-      ];
+    const sections = [
+      { id: 'home', ref: homeRef },
+      { id: 'about', ref: aboutRef },
+      { id: 'skills', ref: skillsRef },
+      { id: 'projects', ref: projectsRef },
+      { id: 'contact', ref: contactRef },
+    ];
 
-      const observers = [];
-      const options = {
-        root: null,
-        rootMargin: '-20% 0px -70% 0px',
-        threshold: 0
-      };
+    const observers = [];
 
-      sections.forEach(({ id, ref }) => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              setActiveSection(id);
-            }
-          });
-        }, options);
+    const options = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    };
 
-        if (ref.current) {
-          observer.observe(ref.current);
-          observers.push(observer);
-        }
-      });
+    sections.forEach(({ id, ref }) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // You should check the current path if this App component renders on all routes.
+          // For simplicity with the Routes structure below, we'll assume it's fine.
+          if (entry.isIntersecting) {
+            setActiveSection(id);
+          }
+        });
+      }, options);
 
-      return () => {
-        observers.forEach(observer => observer.disconnect());
-      };
-    }
-  }, []);
+      if (ref.current) {
+        observer.observe(ref.current);
+        observers.push(observer);
+      }
+    });
 
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []); 
   return (
     <BrowserRouter>
       <Routes>
-        {/* Route for the main portfolio page */}
+        {/* Route for the main portfolio page (which includes NavBar and Footer) */}
         <Route 
           path="/" 
           element={
@@ -145,85 +133,49 @@ function App() {
           } 
         />
         
-        {/* Other routes with NavBar and Footer */}
+        
         <Route 
           path="/services" 
-          element={
-            <PageLayout>
-              <ServiceJoin />
-            </PageLayout>
-          } 
+          element={<ServiceJoin />} 
         />
         
+    
         <Route 
           path="/blog" 
-          element={
-            <PageLayout>
-              <Blog />
-            </PageLayout>
-          } 
+          element={<Blog />} 
         />
         
-        <Route 
+         <Route 
           path="/services/WebApplication" 
-          element={
-            <PageLayout>
-              <WebsiteIntro />
-            </PageLayout>
-          } 
+          element={<WebsiteIntro />} 
         />
 
         <Route 
           path="/services/AI_Development" 
-          element={
-            <PageLayout>
-              <Ai_Development />
-            </PageLayout>
-          } 
+          element={<Ai_Development />} 
         />
 
-        <Route 
+
+         <Route 
           path="/services/Mobile_Development" 
-          element={
-            <PageLayout>
-              <Mobile_Development />
-            </PageLayout>
-          } 
+          element={<Mobile_Development/>} 
         />
 
-        <Route 
+         <Route 
           path="/services/FrontEnd_Development" 
-          element={
-            <PageLayout>
-              <FrontEnd_Development />
-            </PageLayout>
-          } 
+          element={<FrontEnd_Development />} 
         />
 
-        <Route 
+         <Route 
           path="/services/Cloud&Databases_Management" 
-          element={
-            <PageLayout>
-              <CloudAndDatabases />
-            </PageLayout>
-          } 
+          element={<CloudAndDatabases />} 
         />
 
-        {/* Add a catch-all route for 404 pages */}
-        <Route 
-          path="*" 
-          element={
-            <PageLayout>
-              <div style={{ padding: '100px 20px', textAlign: 'center' }}>
-                <h1>Page Not Found</h1>
-                <p>The page you're looking for doesn't exist.</p>
-              </div>
-            </PageLayout>
-          } 
-        />
+       
       </Routes>
     </BrowserRouter>
   );
 }
+
 
 export default App;
