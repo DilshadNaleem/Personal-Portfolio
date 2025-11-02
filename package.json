@@ -1,6 +1,6 @@
 {
   "name": "dilshadnaleem-portfolio",
-  "homepage": ".",
+  "homepage": "https://dilshadnaleemportfolio.vercel.app",
   "dependencies": {
     "devicon": "^2.17.0",
     "lucide-react": "^0.546.0",
