@@ -8,7 +8,7 @@ export default defineConfig({
    server: {
     fs: {
       allow: ['..', 'node_modules/devicon'] // Allow devicon fonts
-    },
+    }
   },
   assetsInclude: ['**/*.ttf', '**/*.woff', '**/*.woff2']
 })
