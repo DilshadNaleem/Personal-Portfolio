@@ -13,4 +13,4 @@ export default defineConfig({
     outDir: 'dist', // Explicitly set output directory
     assetsDir: 'assets' // Organize assets in subfolder
   }
-})
+}) 
