@@ -84,8 +84,7 @@ function App() {
       { id: 'projects', ref: projectsRef },
       { id: 'contact', ref: contactRef },
     ];
-
-    console.log('current path: ' , location.pathname);
+    
 
     const observers = [];
 
@@ -115,7 +114,7 @@ function App() {
     return () => {
       observers.forEach(observer => observer.disconnect());
     };
-  }, [location.pathname]); 
+  }, []); 
   return (
     <BrowserRouter>
       <Routes>
