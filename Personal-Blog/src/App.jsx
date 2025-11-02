@@ -139,8 +139,7 @@ function App() {
           element={<ServiceJoin />} 
         />
         
-        <Route path="*" element={<Home />}
-        />
+    
         <Route 
           path="/blog" 
           element={<Blog />} 
