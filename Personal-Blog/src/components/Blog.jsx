@@ -10,23 +10,36 @@ function Blog() {
     });
     const [progress, setProgress] = useState(0);
 
-    // Calculate timestamps for 3 days from tomorrow
+    // --- FIXED TIMESTAMP CALCULATION ---
+
+    // 1. Calculate the Target (End) Timestamp: 3 days from tomorrow at midnight
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1); // Tomorrow
     tomorrow.setHours(0, 0, 0, 0); // Start at midnight tomorrow
 
-    const FIXED_START_TIMESTAMP = tomorrow.getTime(); // Start tomorrow at midnight
-    const FIXED_TARGET_TIMESTAMP = tomorrow.getTime() + (3 * 24 * 60 * 60 * 1000); // 3 days from tomorrow
+    // Target (End) Time: 3 days from tomorrow at midnight
+    const FIXED_TARGET_TIMESTAMP = tomorrow.getTime() + (3 * 24 * 60 * 60 * 1000); 
 
-    // Calculate the total duration (3 days)
-    const TOTAL_DURATION_MS = FIXED_TARGET_TIMESTAMP - FIXED_START_TIMESTAMP;
+    // Total duration is a fixed 3 days
+    const TOTAL_DURATION_MS = 3 * 24 * 60 * 60 * 1000;
+
+    // Start Time: 3 days BEFORE the Target Time. 
+    // This allows the progress bar to start showing a value immediately if 
+    // the maintenance started in the past (which it must to show progress > 0).
+    const FIXED_START_TIMESTAMP = FIXED_TARGET_TIMESTAMP - TOTAL_DURATION_MS;
+
+    // --- EFFECT HOOK FOR TIMER AND PROGRESS UPDATE ---
 
     useEffect(() => {
         const timer = setInterval(() => {
             const now = new Date().getTime();
             const distance = FIXED_TARGET_TIMESTAMP - now;
+            
+            // Calculate elapsed time from the fixed start
+            const elapsed = now - FIXED_START_TIMESTAMP; 
 
             if (distance <= 0) {
+                // Maintenance is complete
                 clearInterval(timer);
                 setTimeLeft({
                     days: 0,
@@ -45,14 +58,9 @@ function Blog() {
                 });
 
                 // Calculate progress percentage
-                const elapsed = now - FIXED_START_TIMESTAMP;
-                let progressPercentage = 0;
+                let progressPercentage = (elapsed / TOTAL_DURATION_MS) * 100;
                 
-                // Only show progress if we've passed the start time
-                if (now >= FIXED_START_TIMESTAMP) {
-                    progressPercentage = (elapsed / TOTAL_DURATION_MS) * 100;
-                }
-                
+                // Ensure progress stays between 0% and 100%
                 setProgress(Math.min(Math.max(progressPercentage, 0), 100));
             }
         }, 1000);
@@ -60,8 +68,11 @@ function Blog() {
         return () => clearInterval(timer);
     }, []);
 
+    // --- RENDER FUNCTION ---
+
     return(
        <div className="maintenance-container">
+            {/* ... Floating particles remain here ... */}
             <div className="floating-particle"></div>
             <div className="floating-particle"></div>
             <div className="floating-particle"></div>
@@ -107,7 +118,7 @@ function Blog() {
                         ></div>
                     </div>
                     <div className="progress-text">
-                        Maintenance Progress: {Math.round(progress)}% Complete
+                        Maintenance Progress: {Math.round(progress)}% Complete 
                     </div>
                 </div>
             </div>
