@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import "./Blog.css";
 
 function Blog() {
@@ -10,33 +10,33 @@ function Blog() {
     });
     const [progress, setProgress] = useState(0);
 
-    // --- FIXED TIMESTAMP CALCULATION ---
-
-    // 1. Calculate the Target (End) Timestamp: 3 days from tomorrow at midnight
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1); // Tomorrow
-    tomorrow.setHours(0, 0, 0, 0); // Start at midnight tomorrow
-
-    // Target (End) Time: 3 days from tomorrow at midnight
-    const FIXED_TARGET_TIMESTAMP = tomorrow.getTime() + (3 * 24 * 60 * 60 * 1000); 
-
-    // Total duration is a fixed 3 days
-    const TOTAL_DURATION_MS = 3 * 24 * 60 * 60 * 1000;
-
-    // Start Time: 3 days BEFORE the Target Time. 
-    // This allows the progress bar to start showing a value immediately if 
-    // the maintenance started in the past (which it must to show progress > 0).
-    const FIXED_START_TIMESTAMP = FIXED_TARGET_TIMESTAMP - TOTAL_DURATION_MS;
+    // Use useRef to store fixed timestamps (calculated only once)
+    const timestamps = useRef(null);
+    
+    if (!timestamps.current) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setHours(0, 0, 0, 0);
+        
+        const FIXED_TARGET_TIMESTAMP = tomorrow.getTime() + (3 * 24 * 60 * 60 * 1000);
+        const TOTAL_DURATION_MS = 3 * 24 * 60 * 60 * 1000;
+        const FIXED_START_TIMESTAMP = FIXED_TARGET_TIMESTAMP - TOTAL_DURATION_MS;
+        
+        timestamps.current = {
+            target: FIXED_TARGET_TIMESTAMP,
+            start: FIXED_START_TIMESTAMP,
+            total: TOTAL_DURATION_MS
+        };
+    }
 
     // --- EFFECT HOOK FOR TIMER AND PROGRESS UPDATE ---
-
     useEffect(() => {
         const timer = setInterval(() => {
             const now = new Date().getTime();
-            const distance = FIXED_TARGET_TIMESTAMP - now;
+            const distance = timestamps.current.target - now;
             
             // Calculate elapsed time from the fixed start
-            const elapsed = now - FIXED_START_TIMESTAMP; 
+            const elapsed = now - timestamps.current.start; 
 
             if (distance <= 0) {
                 // Maintenance is complete
@@ -58,7 +58,7 @@ function Blog() {
                 });
 
                 // Calculate progress percentage
-                let progressPercentage = (elapsed / TOTAL_DURATION_MS) * 100;
+                let progressPercentage = (elapsed / timestamps.current.total) * 100;
                 
                 // Ensure progress stays between 0% and 100%
                 setProgress(Math.min(Math.max(progressPercentage, 0), 100));
@@ -69,10 +69,9 @@ function Blog() {
     }, []);
 
     // --- RENDER FUNCTION ---
-
     return(
        <div className="maintenance-container">
-            {/* ... Floating particles remain here ... */}
+            {/* Floating particles */}
             <div className="floating-particle"></div>
             <div className="floating-particle"></div>
             <div className="floating-particle"></div>
