@@ -9,34 +9,35 @@ function Blog() {
         seconds: 0
     });
     const [progress, setProgress] = useState(0);
+    const [isClient, setIsClient] = useState(false);
 
-    // Use useRef to store fixed timestamps (calculated only once)
+    // Use useRef to store fixed timestamps (calculated only on client)
     const timestamps = useRef(null);
-    
-    if (!timestamps.current) {
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        tomorrow.setHours(0, 0, 0, 0);
+
+    useEffect(() => {
+        setIsClient(true);
         
-        const FIXED_TARGET_TIMESTAMP = tomorrow.getTime() + (3 * 24 * 60 * 60 * 1000);
-        const TOTAL_DURATION_MS = 3 * 24 * 60 * 60 * 1000;
-        const FIXED_START_TIMESTAMP = FIXED_TARGET_TIMESTAMP - TOTAL_DURATION_MS;
+        const now = new Date().getTime();
+        
+        // Fixed target date: November 15, 2025 at 12:00 AM
+        const FIXED_TARGET_DATE = new Date('2025-11-15T00:00:00');
+        const FIXED_TARGET_TIMESTAMP = FIXED_TARGET_DATE.getTime();
+        
+        // Calculate total duration from NOW until target date
+        const TOTAL_DURATION_MS = FIXED_TARGET_TIMESTAMP - now;
         
         timestamps.current = {
             target: FIXED_TARGET_TIMESTAMP,
-            start: FIXED_START_TIMESTAMP,
+            start: now, // Start from current moment
             total: TOTAL_DURATION_MS
         };
-    }
 
-    // --- EFFECT HOOK FOR TIMER AND PROGRESS UPDATE ---
-    useEffect(() => {
         const timer = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = timestamps.current.target - now;
+            const currentTime = new Date().getTime();
+            const distance = timestamps.current.target - currentTime;
             
-            // Calculate elapsed time from the fixed start
-            const elapsed = now - timestamps.current.start; 
+            // Calculate elapsed time from the start (current moment when component mounted)
+            const elapsed = currentTime - timestamps.current.start; 
 
             if (distance <= 0) {
                 // Maintenance is complete
@@ -57,7 +58,7 @@ function Blog() {
                     seconds: Math.floor((distance % (1000 * 60)) / 1000)
                 });
 
-                // Calculate progress percentage
+                // Calculate progress percentage based on elapsed time from start to total duration
                 let progressPercentage = (elapsed / timestamps.current.total) * 100;
                 
                 // Ensure progress stays between 0% and 100%
@@ -68,7 +69,21 @@ function Blog() {
         return () => clearInterval(timer);
     }, []);
 
-    // --- RENDER FUNCTION ---
+    // Don't render anything until we're on the client side
+    if (!isClient) {
+        return (
+            <div className="maintenance-container">
+                <div className="maintenance-content">
+                    <div className="maintenance-icon">🔧</div>
+                    <h1 className="maintenance-title">We'll Be Back Soon!</h1>
+                    <p className="maintenance-message">
+                        Loading...
+                    </p>
+                </div>
+            </div>
+        );
+    }
+
     return(
        <div className="maintenance-container">
             {/* Floating particles */}
@@ -119,6 +134,11 @@ function Blog() {
                     <div className="progress-text">
                         Maintenance Progress: {Math.round(progress)}% Complete 
                     </div>
+                </div>
+
+                {/* Optional: Display the target date */}
+                <div className="target-date">
+                    Expected Completion: November 15, 2025 at 12:00 AM
                 </div>
             </div>
         </div>
