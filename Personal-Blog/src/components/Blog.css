@@ -477,3 +477,9 @@
         transform: translateX(100%);
     }
 }
+
+.targeted-date {
+    color: black;
+    margin: 10px;
+    padding: 10px 20px;
+}

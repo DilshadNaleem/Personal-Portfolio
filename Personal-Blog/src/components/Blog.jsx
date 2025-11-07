@@ -23,12 +23,16 @@ function Blog() {
         const FIXED_TARGET_DATE = new Date('2025-11-15T00:00:00');
         const FIXED_TARGET_TIMESTAMP = FIXED_TARGET_DATE.getTime();
         
-        // Calculate total duration from NOW until target date
-        const TOTAL_DURATION_MS = FIXED_TARGET_TIMESTAMP - now;
+        // Fixed start date: November 6, 2025 at 12:00 AM (for progress calculation)
+        const FIXED_START_DATE = new Date('2025-11-06T00:00:00');
+        const FIXED_START_TIMESTAMP = FIXED_START_DATE.getTime();
+        
+        // Calculate total duration for progress from START date to TARGET date
+        const TOTAL_DURATION_MS = FIXED_TARGET_TIMESTAMP - FIXED_START_TIMESTAMP;
         
         timestamps.current = {
             target: FIXED_TARGET_TIMESTAMP,
-            start: now, // Start from current moment
+            start: FIXED_START_TIMESTAMP, // Fixed start date for progress
             total: TOTAL_DURATION_MS
         };
 
@@ -36,7 +40,7 @@ function Blog() {
             const currentTime = new Date().getTime();
             const distance = timestamps.current.target - currentTime;
             
-            // Calculate elapsed time from the start (current moment when component mounted)
+            // Calculate elapsed time from the FIXED START date (Nov 6, 2025)
             const elapsed = currentTime - timestamps.current.start; 
 
             if (distance <= 0) {
@@ -50,7 +54,7 @@ function Blog() {
                 });
                 setProgress(100);
             } else {
-                // Calculate time left 
+                // Calculate time left from NOW to target date
                 setTimeLeft({
                     days: Math.floor(distance / (1000 * 60 * 60 * 24)),
                     hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
@@ -58,7 +62,7 @@ function Blog() {
                     seconds: Math.floor((distance % (1000 * 60)) / 1000)
                 });
 
-                // Calculate progress percentage based on elapsed time from start to total duration
+                // Calculate progress percentage based on elapsed time from FIXED START to total duration
                 let progressPercentage = (elapsed / timestamps.current.total) * 100;
                 
                 // Ensure progress stays between 0% and 100%
@@ -136,9 +140,9 @@ function Blog() {
                     </div>
                 </div>
 
-                {/* Optional: Display the target date */}
-                <div className="target-date">
-                    Expected Completion: November 15, 2025 at 12:00 AM
+                {/* Display both start and target dates */}
+                <div className="targeted-date">
+                    Maintenance Period: November 6, 2025 12:00 AM - November 15, 2025 12:00 AM
                 </div>
             </div>
         </div>
