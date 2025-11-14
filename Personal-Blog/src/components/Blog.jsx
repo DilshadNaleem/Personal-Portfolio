@@ -20,7 +20,7 @@ function Blog() {
         const now = new Date().getTime();
         
         // Fixed target date: November 15, 2025 at 12:00 AM
-        const FIXED_TARGET_DATE = new Date('2025-11-15T00:00:00');
+        const FIXED_TARGET_DATE = new Date('2025-11-17T00:00:00');
         const FIXED_TARGET_TIMESTAMP = FIXED_TARGET_DATE.getTime();
         
         // Fixed start date: November 6, 2025 at 12:00 AM (for progress calculation)
@@ -142,7 +142,7 @@ function Blog() {
 
                 {/* Display both start and target dates */}
                 <div className="targeted-date">
-                    Maintenance Period: November 6, 2025 12:00 AM - November 15, 2025 12:00 AM
+                    Maintenance Period: November 6, 2025 12:00 AM - November 17, 2025 12:00 AM
                 </div>
             </div>
         </div>
