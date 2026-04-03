@@ -262,6 +262,108 @@ function MyProjects() {
         Collections of my latest work in software development
       </p>
 
+      
+       <div className="card" data-aos="fade-up" data-aos-delay="300">
+        <div className="card-title" data-aos="fade-right" data-aos-delay="400">
+         Aura Reel - Realtime Face Swapping Model
+        </div>
+        <div
+          className="card-heading"
+          data-aos="fade-right"
+          data-aos-delay="500"
+        >
+          Fullstack Website Applicaiton with Deep Machine learning Model
+        </div>
+        <div className="card-info" data-aos="fade-right" data-aos-delay="600">
+          <div className="project-description">
+            Fullstack web application built with <strong>REST APIs, React, Python </strong>
+            featuring face swapping for real time video.
+          </div> <br />
+
+        <div className="highlights-container">
+            <h4 className="highlights-title">🌟 Key Features</h4>
+            <ul className="highlights-list">
+              <li>Multi-tier role-based authentication system</li>
+              <li>Two-factor authentication & password recovery</li>
+              <li>Real-time notifications.</li>
+              <li>Advanced Machine learning Model</li>
+              <li>Analyzing the video to get the embed faces.</li>
+              <li>Swapping the faces in the video with the embed faces.</li>
+              <li>Dual Mode (Light and Dark)</li> <br />
+            </ul>
+          </div>
+
+        <div className="highlight-container">
+          <h4 className="highlights-title">Proccess</h4>
+          <ul className="highlight-list">
+            Updating the video for the frontend, analyzing the video to fetch the available faces as individual images,
+            Drag and drop the new face image or people to exact same place where the face should be replace.
+          </ul>
+        </div>
+        </div>
+        <div className="card-languages" data-aos="fade-up" data-aos-delay="700">
+          <span className="language-tag">Web Applicaiton</span>
+          <span className="language-tag">Java Springboot</span>
+          <span className="language-tag">Python</span>
+          <span className="language-tag">Flask</span>
+          <span className="language-tag">Random Forest</span>
+          <span className="language-tag">XGBoost</span>
+          <span className="language-tag">Hyper parameter tuning</span>
+          <span className="language-tag">Neural Network</span>
+          <span className="language-tag">Convlutional Neural Network</span>
+          <span className="language-tag">Image Pigmentation</span>
+          <span className="language-tag">Postman</span>
+          <span className="language-tag">Thymealf</span>
+          <span className="language-tag">RESTful APIs</span>
+          <span className="language-tag">HTML</span>
+          <span className="language-tag">CSS</span>
+          <span className="language-tag">Javascript</span>
+          <span className="language-tag">MySQL</span>
+          <span className="language-tag">Junit</span>
+          <span className="language-tag">Mocktio</span>
+          <span className="language-tag">Role Based Access</span>
+          <span className="language-tag">Kaggle</span>
+          <span className="language-tag">e-commerce</span>
+        </div>
+        <a
+          href="https://github.com/DilshadNaleem/Alcura-AI"
+          className="github"
+          data-aos="fade-up"
+          data-aos-delay="800"
+        >
+          View on GitHub <span className="github-arrow">➡️</span>
+        </a>
+
+            <a
+          href="https://github.com/DilshadNaleem/Alcura-Flask"
+          className="github"
+          data-aos="fade-up"
+          data-aos-delay="800"
+        >
+          View on GitHub (Model)<span className="github-arrow">➡️</span>
+        </a>
+
+        <button
+          onClick={() => handleViewMore("Alcura")}
+          className="view-more"
+          data-aos="fade-up"
+          data-aos-delay="850"
+        >
+          View More<span className="github-arrow">➡️</span>
+        </button>
+         <br />
+
+        <a
+        href="/pdf/Data Set Approval BIS 6035.pdf"
+        download={"Data Set Approval BIs 6035.pdf"}
+          className="view-more"
+          data-aos="fade-up"
+          data-aos-delay="850"
+        >
+          Download Report<span className="github-arrow">➡️</span>
+        </a>
+      </div>
+
       {/* Project 1 */}
       <div className="card" data-aos="fade-up" data-aos-delay="200">
         <div className="card-title" data-aos="fade-right" data-aos-delay="300">
