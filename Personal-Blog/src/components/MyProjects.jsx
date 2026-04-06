@@ -318,15 +318,10 @@ function MyProjects() {
           <span className="language-tag">HTML</span>
           <span className="language-tag">CSS</span>
           <span className="language-tag">Javascript</span>
-          <span className="language-tag">MySQL</span>
-          <span className="language-tag">Junit</span>
-          <span className="language-tag">Mocktio</span>
-          <span className="language-tag">Role Based Access</span>
-          <span className="language-tag">Kaggle</span>
           <span className="language-tag">e-commerce</span>
         </div>
         <a
-          href="https://github.com/DilshadNaleem/Alcura-AI"
+          href="https://github.com/DilshadNaleem/AuraReel"
           className="github"
           data-aos="fade-up"
           data-aos-delay="800"
@@ -334,34 +329,19 @@ function MyProjects() {
           View on GitHub <span className="github-arrow">➡️</span>
         </a>
 
-            <a
-          href="https://github.com/DilshadNaleem/Alcura-Flask"
-          className="github"
-          data-aos="fade-up"
-          data-aos-delay="800"
-        >
-          View on GitHub (Model)<span className="github-arrow">➡️</span>
-        </a>
+           
 
-        <button
+        {/* <button
           onClick={() => handleViewMore("Alcura")}
           className="view-more"
           data-aos="fade-up"
           data-aos-delay="850"
         >
           View More<span className="github-arrow">➡️</span>
-        </button>
+        </button> */}
          <br />
 
-        <a
-        href="/pdf/Data Set Approval BIS 6035.pdf"
-        download={"Data Set Approval BIs 6035.pdf"}
-          className="view-more"
-          data-aos="fade-up"
-          data-aos-delay="850"
-        >
-          Download Report<span className="github-arrow">➡️</span>
-        </a>
+       
       </div>
 
       {/* Project 1 */}
