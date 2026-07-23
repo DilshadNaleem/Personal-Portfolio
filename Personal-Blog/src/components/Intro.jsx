@@ -208,7 +208,7 @@ AI.integrate(solution);`}
                     <button
                    onClick={() => {
                     const link = document.createElement('a');
-                    link.href = '/pdf/M.N.M.Dilshad.pdf';
+                    link.href = '/pdf/M.N.M.Dilshad Circullum Vitate.pdf';
                     link.download = 'Dilshad Naleem';
                     link.click();
                    }}
